@@ -1,0 +1,121 @@
+/* ─── How It Works ─── */
+.how-it-works {
+    padding: var(--section-pad) 0;
+    background: var(--bg-surface);
+}
+
+.hiw__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hiw__header .section-subtitle {
+    text-align: center;
+}
+
+.hiw__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    margin-bottom: 3.5rem;
+}
+
+/* Connecting line between steps */
+.hiw__steps::before {
+    content: '';
+    position: absolute;
+    top: 52px;
+    left: calc(16.66% + 26px);
+    right: calc(16.66% + 26px);
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--orange-primary), var(--cyan-accent));
+    z-index: 0;
+}
+
+.hiw__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hiw__connector {
+    display: none;
+}
+
+.hiw__icon-wrap {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--orange-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 24px var(--orange-glow);
+    flex-shrink: 0;
+}
+
+.hiw__number {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 24px;
+    height: 24px;
+    background: var(--orange-primary);
+    border-radius: 50%;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hiw__icon {
+    font-size: 1.8rem;
+}
+
+.hiw__step-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.hiw__step-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.hiw__cta {
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .hiw__steps {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .hiw__steps::before {
+        display: none;
+    }
+
+    .hiw__step {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .hiw__icon-wrap {
+        flex-shrink: 0;
+    }
+}
