@@ -6,14 +6,18 @@
 
 /* ─── CSS Variables ─── */
 :root {
-  /* Paleta Telenet - Más sutil y sofisticada */
-  --orange-primary: #E56B1F; /* Un tono apenas más reposado que el F47C2B puro */
-  --orange-dark: #C25612;
-  --orange-light: #F08645;
-  --orange-glow: rgba(229, 107, 31, 0.12); /* Glow reducido a la mitad para sutileza */
-  --cyan-accent: #3FC4D8;
-  --cyan-dark: #1FA8BC;
-  --cyan-glow: rgba(63, 196, 216, 0.1);
+  /* Paleta Telenet Tricromática (Basada en Logo Oficial) */
+  --cyan-primary: #3AB4E6;
+  --cyan-dark: #228CB8;
+  --cyan-glow: rgba(58, 180, 230, 0.25);
+
+  --orange-primary: #EE7202;
+  --orange-dark: #C65E00;
+  --orange-glow: rgba(238, 114, 2, 0.25);
+
+  --red-accent: #E42013;
+  --red-dark: #B3170D;
+  --red-glow: rgba(228, 32, 19, 0.25);
 
   /* Fondos - Azul Oscuro Corporativo (Midnight Blue) */
   --bg-dark: #0A0F1A;      /* Fondo principal casi negro con un toque azul */

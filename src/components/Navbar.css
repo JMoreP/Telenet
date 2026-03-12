@@ -131,7 +131,7 @@
 }
 
 .navbar__mobile-link:hover {
-  color: var(--orange-primary);
+  color: var(--cyan-primary);
 }
 
 @media (max-width: 900px) {

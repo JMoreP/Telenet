@@ -7,8 +7,9 @@ import HowItWorks from './components/HowItWorks'
 import Coverage from './components/Coverage'
 
 import FAQ from './components/FAQ'
-import Contact from './components/Contact'
+
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
   return (
@@ -27,9 +28,9 @@ function App() {
 
         <FAQ />
         <div className="gradient-line" />
-        <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

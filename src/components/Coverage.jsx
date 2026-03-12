@@ -13,9 +13,6 @@ export default function Coverage() {
                 <div className="coverage__inner">
                     {/* Left */}
                     <div className="coverage__text">
-                        <div className="section-badge">
-                            <span>📍</span> Cobertura
-                        </div>
                         <h2 className="section-title">
                             Llegamos a tu <span>barrio</span>
                         </h2>

@@ -69,16 +69,6 @@ export default function Hero() {
                         <div className="hero__ring r2" />
                         <div className="hero__ring r3" />
                     </div>
-
-                    {/* Floating badges */}
-                    <div className="hero__badge hero__badge--top">
-                        <span className="hero__badge-icon">✓</span>
-                        <span>Sin límite de datos</span>
-                    </div>
-                    <div className="hero__badge hero__badge--bottom">
-                        <span className="hero__badge-icon">⚡</span>
-                        <span>Instalación gratis</span>
-                    </div>
                 </div>
             </div>
 

@@ -80,24 +80,38 @@
   opacity: 1;
 }
 
-/* Ajuste específico visual para la tarjeta central */
+/* Ajustes cromáticos para las 3 tarjetas */
+
+/* Tarjeta 1 - Básico (Cyan) */
+.plan-card--blue {
+  border-color: rgba(58, 180, 230, 0.35);
+}
+
+.plan-card--blue:hover {
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 30px var(--cyan-glow);
+}
+
+/* Tarjeta 2 - Hogar+ (Naranja - Destacado central) */
 .plan-card--featured {
   background: linear-gradient(160deg, #1A2035 0%, #111526 100%);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  border-color: rgba(238, 114, 2, 0.35);
+  box-shadow: 0 0 40px var(--orange-glow), 0 0 1px rgba(255, 255, 255, 0.2) inset;
 }
 
 .plan-card--featured:hover {
+  border-color: var(--orange-primary);
   transform: translateX(0) scale(1.02);
 }
 
+/* Tarjeta 3 - Pro Gaming (Rojo) */
 .plan-card--premium {
-  border-color: rgba(63, 196, 216, 0.35);
+  border-color: rgba(228, 32, 19, 0.35);
 }
 
 .plan-card--premium:hover {
-  border-color: var(--cyan-accent);
-  box-shadow: 0 0 30px var(--cyan-glow);
+  border-color: var(--red-accent);
+  box-shadow: 0 0 30px var(--red-glow);
 }
 
 .plan-card__badge {
@@ -105,14 +119,14 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--cyan-dark), var(--cyan-accent));
+  background: linear-gradient(135deg, var(--orange-dark), var(--orange-primary));
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.35rem 1.2rem;
   border-radius: 50px;
   white-space: nowrap;
-  box-shadow: 0 4px 16px var(--cyan-glow);
+  box-shadow: 0 4px 16px var(--orange-glow);
 }
 
 .plan-card__header {
@@ -148,13 +162,17 @@
   color: var(--text-secondary);
 }
 
+.plan-card--blue .plan-speed-value {
+  color: var(--cyan-primary);
+}
+
 .plan-card--featured .plan-speed-value {
   color: #FFFFFF;
   /* Velocidad en blanco para plan destacado */
 }
 
 .plan-card--premium .plan-speed-value {
-  color: var(--cyan-accent);
+  color: var(--red-accent);
 }
 
 .plan-card__symmetry {
@@ -236,7 +254,7 @@
 }
 
 .plan-card__cta.btn-primary:hover {
-  box-shadow: 0 8px 32px rgba(244, 124, 43, 0.5);
+  box-shadow: 0 8px 32px rgba(238, 114, 2, 0.5);
 }
 
 .plan-card__cta.btn-outline {
