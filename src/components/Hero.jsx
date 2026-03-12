@@ -17,9 +17,7 @@ export default function Hero() {
 
             <div className="container hero__content">
                 <div className="hero__text fade-in-up">
-                    <div className="section-badge">
-                        <span>⚡</span> Fibra Óptica 100% Pura
-                    </div>
+
                     <h1 className="hero__title">
                         Conectá tu mundo a la
                         <span className="hero__title--gradient"> velocidad del futuro</span>

@@ -1,62 +1,94 @@
+import { useEffect, useRef, useState } from 'react'
+import Globe from './Globe'
 import './Plans.css'
 
 const plans = [
     {
         name: 'Básico',
-        speed: '100',
-        price: '25',
+        speed: 300,
+        price: 19.99,
         popular: false,
-        color: 'regular',
+        color: 'blue',
         perks: [
             'Fibra óptica simétrica',
-            'Router WiFi incluido',
-            'IP dinámica',
-            'Soporte estándar',
-            'Sin permanencia',
+            'Router WiFi 6 incluido',
+            'Soporte técnico 24/7',
+            'Instalación gratis',
         ],
     },
     {
-        name: 'Pro',
-        speed: '300',
-        price: '40',
+        name: 'Hogar+',
+        speed: 600,
+        price: 29.99,
         popular: true,
         color: 'featured',
         perks: [
             'Fibra óptica simétrica',
             'Router WiFi 6 incluido',
-            'IP dinámica',
-            'Soporte prioritario 24/7',
-            'Sin permanencia',
-            'Instalación gratuita',
+            'Soporte técnico 24/7',
+            'Instalación gratis',
+            '1 Repetidor Mesh gratis',
         ],
     },
     {
-        name: 'Ultra',
-        speed: '1000',
-        price: '65',
+        name: 'Pro Gaming',
+        speed: 1000,
+        price: 49.99,
         popular: false,
         color: 'premium',
         perks: [
             'Fibra óptica simétrica',
             'Router WiFi 6E incluido',
-            'IP estática incluida',
-            'Soporte VIP 24/7',
-            'Sin permanencia',
-            'Instalación gratuita',
-            'TV incluida',
+            'Soporte técnico VIP 24/7',
+            'Instalación gratis',
+            '2 Repetidores Mesh gratis',
+            'IP Fija',
         ],
     },
 ]
 
 export default function Plans() {
+    const sectionRef = useRef(null)
+    const [scrollProgress, setScrollProgress] = useState(0)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!sectionRef.current) return
+
+            const rect = sectionRef.current.getBoundingClientRect()
+            const windowHeight = window.innerHeight
+
+            // Empezar la animación cuando la sección entre al viewport por abajo
+            const start = windowHeight
+            // Terminar la animación cuando la sección alcance el 25% superior del viewport
+            const end = windowHeight * 0.25
+
+            let progress = (start - rect.top) / (start - end)
+            // Limitar progreso entre 0 y 1
+            progress = Math.max(0, Math.min(1, progress))
+
+            setScrollProgress(progress)
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        handleScroll() // Cálculo inicial
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    // Usaremos globeVisible virtualmente (cuando scroll esté al 45%) 
+    // para activar el fade-in de las tarjetas de los planes mucho más rápido.
+    const globeVisible = scrollProgress > 0.45
+
     return (
-        <section className="plans" id="planes">
+        <section className="plans" id="planes" ref={sectionRef}>
             <div className="plans__bg-glow" />
-            <div className="container">
-                <div className="plans__header">
-                    <div className="section-badge">
-                        <span>📶</span> Nuestros Planes
-                    </div>
+            <Globe scrollProgress={scrollProgress} />
+            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+                <div
+                    className={`plans__header ${globeVisible ? 'fade-in-up' : ''}`}
+                    style={{ opacity: globeVisible ? undefined : 0, animationDelay: '0.1s' }}
+                >
                     <h2 className="section-title">
                         Elegí el plan <span>perfecto</span> para vos
                     </h2>
@@ -67,7 +99,16 @@ export default function Plans() {
 
                 <div className="plans__grid">
                     {plans.map((plan, i) => (
-                        <div key={i} className={`plan-card plan-card--${plan.color} fade-in-up delay-${i + 1}`}>
+                        <div
+                            key={i}
+                            className={`plan-card plan-card--${plan.color}`}
+                            style={{
+                                opacity: globeVisible ? undefined : 0,
+                                filter: globeVisible ? 'none' : 'blur(10px)',
+                                transform: globeVisible ? undefined : 'translateY(20px) scale(0.8)',
+                                transitionDelay: `${0.1 + i * 0.1}s`
+                            }}
+                        >
                             {plan.popular && (
                                 <div className="plan-card__badge">⭐ Más Popular</div>
                             )}

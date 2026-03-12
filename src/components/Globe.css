@@ -1,0 +1,31 @@
+/* ─── Globe ─── */
+.globe-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 120vw);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  /* Estado inicial: invisible */
+}
+
+
+
+@keyframes globe-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .globe-wrap {
+    width: min(500px, 150vw);
+    top: 40%;
+  }
+}

@@ -18,7 +18,7 @@ export default function Navbar() {
             <div className="container navbar__inner">
                 {/* Logo */}
                 <a href="#hero" className="navbar__logo" onClick={() => setMenuOpen(false)}>
-                    <img src="/logo.png" alt="Telenet Logo" className="navbar__logo-img" />
+                    <img src="/telenet.jpg" alt="Telenet Logo" className="navbar__logo-img" />
                     <span className="navbar__brand">Tele<span>net</span></span>
                 </a>
 

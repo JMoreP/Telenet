@@ -49,7 +49,7 @@
 }
 
 .contact__method:hover {
-    border-color: var(--orange-primary);
+    border-color: var(--cyan-accent); /* Hover del método de contacto en Cyan */
     transform: translateX(4px);
 }
 
@@ -137,8 +137,8 @@
 
 .contact__field input:focus,
 .contact__field select:focus {
-    border-color: var(--orange-primary);
-    box-shadow: 0 0 0 3px var(--orange-glow);
+    border-color: var(--cyan-accent); /* Focus en Cyan */
+    box-shadow: 0 0 0 3px var(--cyan-glow);
 }
 
 .contact__field input::placeholder {

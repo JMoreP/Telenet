@@ -1,121 +1,402 @@
-/* ─── How It Works ─── */
-.how-it-works {
-    padding: var(--section-pad) 0;
-    background: var(--bg-surface);
+/* ─── App Promo (Reemplaza How It Works) ─── */
+.app-promo {
+  position: relative;
+  padding: clamp(6rem, 12vw, 10rem) 0;
+  background: var(--bg-surface);
+  overflow: hidden;
 }
 
-.hiw__header {
+/* Marca de Agua Estilo "APP WEB" gigante y hueca */
+.app-promo__bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(8rem, 25vw, 22rem);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  z-index: 0;
+  line-height: 1;
+}
+
+/* Contenedor Grid Principal */
+.app-promo__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* ─── Contenido İzquierdo ─── */
+.app-promo__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  max-width: 480px;
+}
+
+.app-promo__title {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.app-promo__title span {
+  color: #fff;
+}
+
+.app-promo__desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.app-promo__desc strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.app-promo__cta {
+  width: fit-content;
+  background: var(--success);
+  /* Verde Telenet CTAs/Whatsapp u Naranja - la referencia usa Verde */
+  background: linear-gradient(135deg, #22C55E, #16A34A);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.app-promo__cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.35);
+}
+
+
+/* ─── Laptop Mockup CSS (Lado Derecho) ─── */
+.app-promo__visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+  /* Para posbles efectos 3D en hover */
+}
+
+.laptop-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Pantalla / Monitor */
+.laptop-screen {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 16 / 10;
+  background: #111420;
+  /* Marco interno oscuro */
+  border-radius: 18px 18px 0 0;
+  padding: 12px 12px 18px 12px;
+  border: 2px solid #333947;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Webcam superior */
+.laptop-screen::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Pantalla Real (Inner) */
+.laptop-screen-inner {
+  width: 100%;
+  height: 100%;
+  background: #0A0F1A;
+  /* Igual al fondo oscuro de index para consistencia */
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  background-image: linear-gradient(180deg, #111A2B 0%, #0A0F1A 100%);
+  /* Brillito sutil en panel central */
+}
+
+/* --- Simulación UI Gráfica (Dashboard CSS) --- */
+.ui-mockup {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-nav {
+  height: 36px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.ui-nav-brand {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ui-nav-brand::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--cyan-accent);
+  border-radius: 50%;
+}
+
+.ui-nav-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--border-color);
+}
+
+.ui-hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto glow radial estilo Thundernet Go / Deportivo de fondo */
+.ui-hero::before {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ui-hero-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0.9;
+}
+
+.ui-hero-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--cyan-dark);
+  border-top-color: var(--cyan-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg);
+  /* Efecto loading asimétrico */
+}
+
+.ui-hero-circle span {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  transform: rotate(45deg);
+  line-height: 1;
+}
+
+.ui-hero-circle small {
+  font-size: 0.5rem;
+  color: var(--cyan-accent);
+  transform: rotate(45deg);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ui-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 0 1rem 1rem;
+  height: 25%;
+}
+
+.ui-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  transition: var(--transition);
+}
+
+.ui-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-2px);
+}
+
+.ui-card-icon {
+  width: 24px;
+  height: 24px;
+  background: rgba(63, 196, 216, 0.15);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.ui-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ui-card-title {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.ui-card-desc {
+  font-size: 0.45rem;
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+.ui-card:nth-child(2) {
+  border-color: rgba(244, 124, 43, 0.2);
+  /* Highlight en la segunda miniatura */
+}
+
+/* ─── Base del Laptop (Teclado Inferior) ─── */
+.laptop-base {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Parte superior del teclado */
+.laptop-base-top {
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(180deg, #AAB4C1 0%, #778191 100%);
+  /* Aluminio oscuro */
+  border-radius: 2px 2px 0 0;
+  box-shadow: inset 0 2px 0px rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+/* Parte inferior + Notch (Espacio p/ abrir la tapa) */
+.laptop-base-bottom {
+  width: 102%;
+  height: 10px;
+  background: linear-gradient(180deg, #5C6576 0%, #3B4253 100%);
+  border-radius: 0 0 15px 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.laptop-notch {
+  width: 15%;
+  height: 4px;
+  background: #252A35;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Sombra generada por la laptop debajo */
+.laptop-base::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  width: 90%;
+  height: 30px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, transparent 70%);
+  filter: blur(10px);
+  z-index: 0;
+}
+
+
+/* ─── Responsive ─── */
+@media (max-width: 950px) {
+  .app-promo__inner {
+    grid-template-columns: 1fr;
     text-align: center;
-    margin-bottom: 4rem;
-    display: flex;
-    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .app-promo__content {
+    margin: 0 auto;
     align-items: center;
+  }
+
+  .app-promo__bg-text {
+    font-size: 15vw;
+  }
 }
 
-.hiw__header .section-subtitle {
-    text-align: center;
-}
+@media (max-width: 600px) {
+  .app-promo__bg-text {
+    font-size: 18vw;
+    top: 40%;
+  }
 
-.hiw__steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    position: relative;
-    margin-bottom: 3.5rem;
-}
+  .laptop-screen {
+    padding: 8px 8px 12px 8px;
+    /* Pantalla con marcos ms delgados en móviles */
+    border-width: 1.5px;
+  }
 
-/* Connecting line between steps */
-.hiw__steps::before {
-    content: '';
-    position: absolute;
-    top: 52px;
-    left: calc(16.66% + 26px);
-    right: calc(16.66% + 26px);
-    height: 1.5px;
-    background: linear-gradient(90deg, var(--orange-primary), var(--cyan-accent));
-    z-index: 0;
-}
-
-.hiw__step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.hiw__connector {
-    display: none;
-}
-
-.hiw__icon-wrap {
-    position: relative;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: var(--bg-card);
-    border: 2px solid var(--orange-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 24px var(--orange-glow);
-    flex-shrink: 0;
-}
-
-.hiw__number {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    width: 24px;
-    height: 24px;
-    background: var(--orange-primary);
-    border-radius: 50%;
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hiw__icon {
-    font-size: 1.8rem;
-}
-
-.hiw__step-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.hiw__step-desc {
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-}
-
-.hiw__cta {
-    text-align: center;
-}
-
-@media (max-width: 700px) {
-    .hiw__steps {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .hiw__steps::before {
-        display: none;
-    }
-
-    .hiw__step {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    .hiw__icon-wrap {
-        flex-shrink: 0;
-    }
+  .laptop-base-bottom {
+    height: 6px;
+    border-radius: 0 0 8px 8px;
+  }
 }

@@ -6,30 +6,30 @@
 
 /* ─── CSS Variables ─── */
 :root {
-  /* Paleta Telenet */
-  --orange-primary: #F47C2B;
-  --orange-dark: #D4611A;
-  --orange-light: #FF9A4D;
-  --orange-glow: rgba(244, 124, 43, 0.25);
+  /* Paleta Telenet - Más sutil y sofisticada */
+  --orange-primary: #E56B1F; /* Un tono apenas más reposado que el F47C2B puro */
+  --orange-dark: #C25612;
+  --orange-light: #F08645;
+  --orange-glow: rgba(229, 107, 31, 0.12); /* Glow reducido a la mitad para sutileza */
   --cyan-accent: #3FC4D8;
   --cyan-dark: #1FA8BC;
-  --cyan-glow: rgba(63, 196, 216, 0.2);
+  --cyan-glow: rgba(63, 196, 216, 0.1);
 
-  /* Fondos */
-  --bg-dark: #0B0D14;
-  --bg-surface: #111420;
-  --bg-card: #161A2E;
-  --bg-card-hover: #1E2340;
-  --border-color: rgba(255, 255, 255, 0.07);
+  /* Fondos - Azul Oscuro Corporativo (Midnight Blue) */
+  --bg-dark: #0A0F1A;      /* Fondo principal casi negro con un toque azul */
+  --bg-surface: #0F1626;   /* Fondo secundario (secciones) */
+  --bg-card: #141D30;      /* Fondo de tarjetas, un escalón más luminoso */
+  --bg-card-hover: #1A263D; /* Hover de tarjetas */
+  --border-color: rgba(255, 255, 255, 0.08);
 
-  /* Texto */
-  --text-primary: #F5F5F0;
-  --text-secondary: #8A95A8;
-  --text-muted: #5A6478;
+  /* Texto - Menos contraste brutal, más elegancia */
+  --text-primary: #EEEEEE;
+  --text-secondary: #AAAAAA;
+  --text-muted: #777777;
 
   /* Estado */
   --success: #22C55E;
-  --success-glow: rgba(34, 197, 94, 0.2);
+  --success-glow: rgba(34, 197, 94, 0.15);
 
   /* Tipografía */
   --font-main: 'Outfit', sans-serif;
@@ -102,9 +102,9 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--orange-glow);
-  border: 1px solid rgba(244, 124, 43, 0.35);
-  color: var(--orange-primary);
+  background: var(--cyan-glow);
+  border: 1px solid rgba(63, 196, 216, 0.35);
+  color: var(--cyan-accent);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -124,10 +124,7 @@ button {
 }
 
 .section-title span {
-  background: linear-gradient(135deg, var(--orange-primary), var(--orange-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #FFFFFF; /* Título secundario en blanco, sin gradiente naranja */
 }
 
 .section-subtitle {
@@ -176,8 +173,8 @@ button {
 }
 
 .btn-outline:hover {
-  border-color: var(--orange-primary);
-  color: var(--orange-primary);
+  background: rgba(255, 255, 255, 0.05); /* Hover simple sin naranja */
+  color: #FFFFFF;
   transform: translateY(-2px);
 }
 
@@ -298,13 +295,13 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--orange-primary);
+  background: var(--cyan-dark); /* Scroll cyan en lugar de naranja */
   border-radius: 10px;
 }
 
 /* ─── Gradient Dividers ─── */
 .gradient-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--orange-primary), transparent);
+  background: linear-gradient(90deg, transparent, rgba(63, 196, 216, 0.4), transparent); /* Línea divisoria en Cyan en lugar de naranja */
   margin: 0;
 }
