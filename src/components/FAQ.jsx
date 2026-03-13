@@ -35,9 +35,6 @@ export default function FAQ() {
         <section className="faq" id="faq">
             <div className="container">
                 <div className="faq__header">
-                    <div className="section-badge">
-                        <span>❓</span> Preguntas Frecuentes
-                    </div>
                     <h2 className="section-title">
                         Respondemos tus <span>dudas</span>
                     </h2>

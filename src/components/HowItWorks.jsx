@@ -25,7 +25,7 @@ export default function HowItWorks() {
     return (
         <section className="app-promo" id="app-web">
             {/* Texto gigante de fondo (Stroke / Outline) */}
-            <div className="app-promo__bg-text">APP WEB</div>
+            <div className="app-promo__bg-text">WEB</div>
 
             <div className="container app-promo__inner">
                 {/* Lado Izquierdo: Contenido Textual */}
@@ -52,7 +52,7 @@ export default function HowItWorks() {
                                 {/* Pantalla / Interfaz UI Simulada */}
                                 <div className="ui-mockup">
                                     <div className="ui-nav">
-                                        <div className="ui-nav-brand">Telenet Dashboard</div>
+                                        <div className="ui-nav-brand">Telenet</div>
                                         <div className="ui-nav-avatar"></div>
                                     </div>
                                     <div className="ui-hero">
@@ -62,17 +62,7 @@ export default function HowItWorks() {
                                             <small>Mbps</small>
                                         </div>
                                     </div>
-                                    <div className="ui-grid">
-                                        {steps.map((step, i) => (
-                                            <div key={i} className="ui-card">
-                                                <div className="ui-card-icon">{step.icon}</div>
-                                                <div className="ui-card-content">
-                                                    <div className="ui-card-title">{step.number}. {step.title}</div>
-                                                    <div className="ui-card-desc">{step.desc}</div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

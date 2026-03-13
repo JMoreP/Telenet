@@ -2,7 +2,27 @@
 .plans {
   padding: var(--section-pad) 0;
   position: relative;
-  /* Eliminado overflow: hidden para que las tarjetas laterales no se corten */
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(rgba(240, 81, 35, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.plans::before {
+  content: "T E L E N E T \A C O N E C T I V I D A D \A F I B R A  O P T I C A \A O N L I N E \A S P E E D \A / / / / / /";
+  white-space: pre-wrap;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.3em;
+  color: var(--orange-primary);
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  text-align: right;
+  user-select: none;
 }
 
 .plans__bg-glow {
@@ -94,9 +114,9 @@
 
 /* Tarjeta 2 - Hogar+ (Naranja - Destacado central) */
 .plan-card--featured {
-  background: linear-gradient(160deg, #1A2035 0%, #111526 100%);
-  border-color: rgba(238, 114, 2, 0.35);
-  box-shadow: 0 0 40px var(--orange-glow), 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  background: #FFFFFF;
+  border: 2px solid var(--orange-glow);
+  box-shadow: 0 10px 40px rgba(240, 81, 35, 0.15), 0 0 0 1px rgba(240, 81, 35, 0.1) inset;
 }
 
 .plan-card--featured:hover {
@@ -119,14 +139,14 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--orange-dark), var(--orange-primary));
+  background: var(--orange-primary);
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.35rem 1.2rem;
   border-radius: 50px;
   white-space: nowrap;
-  box-shadow: 0 4px 16px var(--orange-glow);
+  box-shadow: 0 4px 16px rgba(240, 81, 35, 0.25);
 }
 
 .plan-card__header {
@@ -167,8 +187,8 @@
 }
 
 .plan-card--featured .plan-speed-value {
-  color: #FFFFFF;
-  /* Velocidad en blanco para plan destacado */
+  color: var(--orange-primary);
+  /* Velocidad en Naranja para plan destacado */
 }
 
 .plan-card--premium .plan-speed-value {
@@ -248,13 +268,15 @@
 }
 
 .plan-card__cta.btn-primary {
-  background: linear-gradient(135deg, var(--orange-primary), var(--orange-dark));
+  background: var(--orange-primary);
   color: #fff;
-  box-shadow: 0 4px 20px var(--orange-glow);
+  border: 1px solid var(--orange-dark);
+  box-shadow: 0 4px 15px rgba(240, 81, 35, 0.2);
 }
 
 .plan-card__cta.btn-primary:hover {
-  box-shadow: 0 8px 32px rgba(238, 114, 2, 0.5);
+  background: var(--orange-dark);
+  box-shadow: 0 8px 25px rgba(240, 81, 35, 0.3);
 }
 
 .plan-card__cta.btn-outline {

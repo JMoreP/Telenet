@@ -1,6 +1,30 @@
 /* ─── FAQ ─── */
 .faq {
   padding: var(--section-pad) 0;
+  position: relative;
+  background-color: var(--bg-dark);
+  /* Fondo alterno para separar */
+  background-image: radial-gradient(rgba(240, 81, 35, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+  overflow: hidden;
+}
+
+.faq::before {
+  content: "P R E G U N T A S \A A S I S T E N C I A \A F I B R A  O P T I C A \A S U P P O R T \A K N O W L E D G E \A / / / / / /";
+  white-space: pre-wrap;
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.3em;
+  color: var(--orange-primary);
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  text-align: right;
+  user-select: none;
 }
 
 .faq__header {
@@ -24,16 +48,20 @@
 }
 
 .faq__item {
-  background: var(--bg-card);
+  background: #FFFFFF;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border-radius: 8px;
+  /* Redondeo sutil */
   overflow: hidden;
   cursor: pointer;
   transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .faq__item:hover {
-  border-color: rgba(244, 124, 43, 0.3);
+  border-color: rgba(240, 81, 35, 0.3);
+  /* Naranja Cloudflare */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .faq__item--open {
@@ -61,6 +89,7 @@
   height: 28px;
   border-radius: 50%;
   background: var(--bg-dark);
+  /* Crema claro */
   display: flex;
   align-items: center;
   justify-content: center;

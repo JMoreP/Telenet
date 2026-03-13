@@ -228,30 +228,30 @@ export default function Globe({ scrollProgress }) {
     >
       <svg viewBox="0 0 400 400" className="globe-svg" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          {/* Gradiente del globo — azul oscuro con luz superior izquierda */}
+          {/* Gradiente del globo — tonos crema/peach cálidos */}
           <radialGradient id="gGlobe" cx="36%" cy="32%" r="65%">
-            <stop offset="0%"   stopColor="#1B4580" stopOpacity="0.95" />
-            <stop offset="40%"  stopColor="#0E2A55" stopOpacity="0.98" />
-            <stop offset="75%"  stopColor="#071630" stopOpacity="1"    />
-            <stop offset="100%" stopColor="#030B1A" stopOpacity="1"    />
+            <stop offset="0%"   stopColor="#FFFFFF" stopOpacity="0.9" />
+            <stop offset="40%"  stopColor="#FDF4ED" stopOpacity="0.95" />
+            <stop offset="75%"  stopColor="#FBDBC6" stopOpacity="1"    />
+            <stop offset="100%" stopColor="#E8BBA1" stopOpacity="1"    />
           </radialGradient>
 
-          {/* Halo atmosférico */}
+          {/* Halo atmosférico cálido */}
           <radialGradient id="gAtmo" cx="50%" cy="50%" r="50%">
             <stop offset="82%" stopColor="transparent" />
-            <stop offset="100%" stopColor="rgba(14,120,210,0.35)" />
+            <stop offset="100%" stopColor="rgba(240,81,35,0.12)" />
           </radialGradient>
 
           {/* Brillo superior izquierdo */}
           <radialGradient id="gShine" cx="35%" cy="30%" r="35%">
-            <stop offset="0%"   stopColor="rgba(100,180,255,0.18)" />
+            <stop offset="0%"   stopColor="rgba(255,255,255,0.6)" />
             <stop offset="100%" stopColor="transparent" />
           </radialGradient>
 
           {/* Glow naranja exterior */}
           <radialGradient id="gOrange" cx="50%" cy="50%" r="50%">
             <stop offset="84%" stopColor="transparent" />
-            <stop offset="100%" stopColor="rgba(244,124,43,0.18)" />
+            <stop offset="100%" stopColor="rgba(240,81,35,0.18)" />
           </radialGradient>
 
           {/* Clip al círculo */}
@@ -281,7 +281,7 @@ export default function Globe({ scrollProgress }) {
         <g clipPath="url(#cGlobe)">
           {GRID.map((line, i) => (
             <path key={i} d={line.d} fill="none"
-              stroke="rgba(63,196,216,0.13)"
+              stroke="rgba(89,28,4,0.08)"
               strokeWidth="0.6"
             />
           ))}
@@ -291,7 +291,7 @@ export default function Globe({ scrollProgress }) {
         <g clipPath="url(#cGlobe)">
           {PROJECTED_DOTS.map((p, i) => (
             <circle key={i} cx={p.x} cy={p.y} r="2"
-              fill="rgba(100,200,240,0.55)"
+              fill="rgba(89,28,4,0.25)"
             />
           ))}
         </g>
@@ -327,19 +327,19 @@ export default function Globe({ scrollProgress }) {
               <g key={i}>
                 {/* Anillos pulsantes */}
                 <circle cx={p.x} cy={p.y} r="5" fill="none"
-                  stroke="rgba(63,196,216,0.7)" strokeWidth="1.2"
+                  stroke="rgba(240,81,35,0.7)" strokeWidth="1.2"
                   className="node-pulse"
                   style={{ animationDelay: `${i * 0.5}s` }}
                 />
                 <circle cx={p.x} cy={p.y} r="5" fill="none"
-                  stroke="rgba(63,196,216,0.4)" strokeWidth="0.8"
+                  stroke="rgba(240,81,35,0.4)" strokeWidth="0.8"
                   className="node-pulse-2"
                   style={{ animationDelay: `${i * 0.5 + 0.4}s` }}
                 />
                 {/* Punto central */}
                 <circle cx={p.x} cy={p.y} r="3"
-                  fill="rgba(63,196,216,0.9)"
-                  stroke="rgba(255,255,255,0.6)" strokeWidth="0.8"
+                  fill="rgba(240,81,35,0.9)"
+                  stroke="rgba(255,255,255,0.8)" strokeWidth="1"
                 />
               </g>
             )
@@ -354,7 +354,7 @@ export default function Globe({ scrollProgress }) {
 
         {/* ─── Borde / rim ─── */}
         <circle cx="200" cy="200" r="178" fill="none"
-          stroke="rgba(63,196,216,0.3)" strokeWidth="1.5" />
+          stroke="rgba(89,28,4,0.15)" strokeWidth="1.5" />
 
         {/* ─── Glow naranja exterior ─── */}
         <circle cx="200" cy="200" r="178" fill="url(#gOrange)" />
@@ -368,7 +368,7 @@ export default function Globe({ scrollProgress }) {
           const y = 200 + ry * Math.sin(angle)
           return (
             <circle key={i} cx={x} cy={y} r={1 + (i % 2) * 0.5}
-              fill="rgba(14,120,210,0.5)"
+              fill="rgba(240,81,35,0.5)"
               opacity={0.3 + (i % 3) * 0.2}
             />
           )

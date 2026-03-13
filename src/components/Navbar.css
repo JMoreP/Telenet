@@ -5,16 +5,15 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1.2rem 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
   transition: var(--transition);
 }
 
 .navbar--scrolled {
-  background: rgba(11, 13, 20, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-color);
   padding: 0.8rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra al hacer scroll */
 }
 
 .navbar__inner {
@@ -105,17 +104,17 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile menu */
 .navbar__mobile {
   display: none;
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.5rem;
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border-top: 1px solid var(--border-color);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .navbar__mobile--open {

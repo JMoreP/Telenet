@@ -1,21 +1,42 @@
-/* ─── App Promo (Reemplaza How It Works) ─── */
+/* ─── App Promo (Estilo Light) ─── */
 .app-promo {
   position: relative;
   padding: clamp(6rem, 12vw, 10rem) 0;
-  background: var(--bg-surface);
+  background-color: var(--bg-surface);
+  background-image: radial-gradient(rgba(240, 81, 35, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
   overflow: hidden;
 }
 
-/* Marca de Agua Estilo "APP WEB" gigante y hueca */
+.app-promo::before {
+  content: "A P P  W E B \A C O N T R O L  T O T A L \A F I B R A  O P T I C A \A M A N A G E M E N T \A D A S H B O A R D \A / / / / / /";
+  white-space: pre-wrap;
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.3em;
+  color: var(--orange-primary);
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  text-align: right;
+  user-select: none;
+}
+
+/* Marca de Agua Estilo "APP WEB" gigante */
 .app-promo__bg-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-70%, -120%);
   font-size: clamp(8rem, 25vw, 22rem);
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.05);
+  -webkit-text-stroke: 2px rgba(240, 81, 35, 0.20);
+  /* Trazo naranja sutil pero mucho más visible */
   white-space: nowrap;
   letter-spacing: 0.1em;
   pointer-events: none;
@@ -33,7 +54,7 @@
   gap: 5rem;
 }
 
-/* ─── Contenido İzquierdo ─── */
+/* ─── Contenido Izquierdo ─── */
 .app-promo__content {
   display: flex;
   flex-direction: column;
@@ -50,7 +71,7 @@
 }
 
 .app-promo__title span {
-  color: #fff;
+  color: var(--orange-primary);
 }
 
 .app-promo__desc {
@@ -64,27 +85,10 @@
   font-weight: 700;
 }
 
+/* Usa el botón primario del theme */
 .app-promo__cta {
   width: fit-content;
-  background: var(--success);
-  /* Verde Telenet CTAs/Whatsapp u Naranja - la referencia usa Verde */
-  background: linear-gradient(135deg, #22C55E, #16A34A);
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.25);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: var(--transition);
 }
-
-.app-promo__cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.35);
-}
-
 
 /* ─── Laptop Mockup CSS (Lado Derecho) ─── */
 .app-promo__visual {
@@ -93,7 +97,6 @@
   display: flex;
   justify-content: center;
   perspective: 1000px;
-  /* Para posbles efectos 3D en hover */
 }
 
 .laptop-mockup {
@@ -105,17 +108,17 @@
   align-items: center;
 }
 
-/* Pantalla / Monitor */
+/* Pantalla / Monitor (Bezel claro/gris sutil imitando aluminio/blanco) */
 .laptop-screen {
   position: relative;
   width: 90%;
   aspect-ratio: 16 / 10;
-  background: #111420;
-  /* Marco interno oscuro */
-  border-radius: 18px 18px 0 0;
+  background: #EAEAEA;
+  /* Marco plateado claro */
+  border-radius: 12px 12px 0 0;
   padding: 12px 12px 18px 12px;
-  border: 2px solid #333947;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid #D5D5D5;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 /* Webcam superior */
@@ -127,25 +130,22 @@
   transform: translateX(-50%);
   width: 5px;
   height: 5px;
-  background: #000;
+  background: #888;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 /* Pantalla Real (Inner) */
 .laptop-screen-inner {
   width: 100%;
   height: 100%;
-  background: #0A0F1A;
-  /* Igual al fondo oscuro de index para consistencia */
-  border-radius: 6px;
+  background: #FFFFFF;
+  border-radius: 4px;
   overflow: hidden;
   position: relative;
-  background-image: linear-gradient(180deg, #111A2B 0%, #0A0F1A 100%);
-  /* Brillito sutil en panel central */
+  border: 1px solid #EFEFEF;
 }
 
-/* --- Simulación UI Gráfica (Dashboard CSS) --- */
+/* --- Simulación UI Gráfica (Dashboard CSS Light) --- */
 .ui-mockup {
   width: 100%;
   height: 100%;
@@ -155,8 +155,8 @@
 
 .ui-nav {
   height: 36px;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F9F9F9;
+  border-bottom: 1px solid #EEEDEB;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -166,7 +166,7 @@
 .ui-nav-brand {
   font-size: 0.65rem;
   font-weight: 800;
-  color: #fff;
+  color: #3D1100;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   display: flex;
@@ -179,7 +179,7 @@
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: var(--cyan-primary);
+  background: var(--orange-primary);
   border-radius: 50%;
 }
 
@@ -187,7 +187,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--border-color);
+  background: #DDD;
 }
 
 .ui-hero {
@@ -198,175 +198,154 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efecto glow radial estilo Thundernet Go / Deportivo de fondo */
-.ui-hero::before {
-  content: '';
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
-  pointer-events: none;
+  background: linear-gradient(180deg, #FFF9F5 0%, #FFFFFF 100%);
 }
 
 .ui-hero-text {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  opacity: 0.9;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .ui-hero-circle {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 4px solid var(--cyan-dark);
-  border-top-color: var(--cyan-primary);
+  border: 6px solid var(--orange-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: rotate(-45deg);
-  /* Efecto loading asimétrico */
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(240, 81, 35, 0.1);
+  color: var(--text-primary);
 }
 
 .ui-hero-circle span {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   font-weight: 900;
-  color: #fff;
-  transform: rotate(45deg);
   line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--orange-primary);
 }
 
 .ui-hero-circle small {
-  font-size: 0.5rem;
-  color: var(--cyan-primary);
-  transform: rotate(45deg);
+  font-size: 0.8rem;
   font-weight: 700;
+  color: var(--text-secondary);
   text-transform: uppercase;
+  margin-top: 0.2rem;
 }
 
 .ui-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  padding: 0 1rem 1rem;
-  height: 25%;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #FFFFFF;
 }
 
 .ui-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 6px;
+  background: #FFFFFF;
+  border: 1px solid #EEEDEB;
+  border-radius: 8px;
+  padding: 1rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 0.5rem;
-  padding: 0.5rem;
-  transition: var(--transition);
-}
-
-.ui-card:hover {
-  background: rgba(255, 255, 255, 0.07);
-  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 .ui-card-icon {
-  width: 24px;
-  height: 24px;
-  background: var(--cyan-glow);
-  border-radius: 4px;
+  font-size: 1.2rem;
+  background: var(--brand-light);
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  flex-shrink: 0;
-}
-
-.ui-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  border-radius: 6px;
 }
 
 .ui-card-title {
-  font-size: 0.55rem;
-  font-weight: 700;
-  color: #fff;
-  white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 0.2rem;
 }
 
 .ui-card-desc {
-  font-size: 0.45rem;
-  color: var(--text-secondary);
-  line-height: 1.2;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
-.ui-card:nth-child(2) {
-  border-color: var(--orange-glow);
-  /* Highlight en la segunda miniatura */
-}
-
-/* ─── Base del Laptop (Teclado Inferior) ─── */
+/* Base de la Laptop (Plateado/Blanco) */
 .laptop-base {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Parte superior del teclado */
-.laptop-base-top {
+  position: relative;
   width: 100%;
   height: 12px;
-  background: linear-gradient(180deg, #AAB4C1 0%, #778191 100%);
-  /* Aluminio oscuro */
-  border-radius: 2px 2px 0 0;
-  box-shadow: inset 0 2px 0px rgba(255, 255, 255, 0.2);
-  position: relative;
   z-index: 2;
+  margin-top: -2px;
 }
 
-/* Parte inferior + Notch (Espacio p/ abrir la tapa) */
-.laptop-base-bottom {
-  width: 102%;
+.laptop-base-top {
+  width: 100%;
   height: 10px;
-  background: linear-gradient(180deg, #5C6576 0%, #3B4253 100%);
-  border-radius: 0 0 15px 15px;
+  background: #D5D5D5;
+  border-radius: 0 0 12px 12px;
+}
+
+.laptop-base-bottom {
+  width: 96%;
+  margin: 0 auto;
+  height: 4px;
+  background: #B0B0B0;
+  border-radius: 0 0 8px 8px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .laptop-notch {
-  width: 15%;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
   height: 4px;
-  background: #252A35;
+  background: #B0B0B0;
   border-radius: 0 0 4px 4px;
 }
 
-/* Sombra generada por la laptop debajo */
-.laptop-base::after {
-  content: '';
-  position: absolute;
-  bottom: -40px;
-  width: 90%;
-  height: 30px;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, transparent 70%);
-  filter: blur(10px);
-  z-index: 0;
+/* Animaciones */
+@keyframes floatLaptop {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
+.laptop-mockup {
+  animation: floatLaptop 6s ease-in-out infinite;
+}
 
 /* ─── Responsive ─── */
-@media (max-width: 950px) {
+@media (max-width: 1024px) {
+  .app-promo__inner {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
   .app-promo__inner {
     grid-template-columns: 1fr;
     text-align: center;
@@ -374,29 +353,42 @@
   }
 
   .app-promo__content {
+    max-width: 600px;
     margin: 0 auto;
     align-items: center;
   }
 
-  .app-promo__bg-text {
-    font-size: 15vw;
+  .ui-grid {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .ui-hero-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ui-hero-circle span {
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 600px) {
-  .app-promo__bg-text {
-    font-size: 18vw;
-    top: 40%;
+@media (max-width: 480px) {
+  .app-promo {
+    padding: 4rem 0 5rem;
   }
 
   .laptop-screen {
+    width: 96%;
     padding: 8px 8px 12px 8px;
-    /* Pantalla con marcos ms delgados en móviles */
-    border-width: 1.5px;
   }
 
-  .laptop-base-bottom {
-    height: 6px;
-    border-radius: 0 0 8px 8px;
+  .ui-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .ui-hero {
+    padding: 1rem;
   }
 }
