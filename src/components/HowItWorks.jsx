@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+import NumberFlow from '@number-flow/react'
 import './HowItWorks.css'
 
 const steps = [
@@ -22,6 +24,16 @@ const steps = [
 ]
 
 export default function HowItWorks() {
+    const [speed, setSpeed] = useState(0);
+
+    useEffect(() => {
+        // Pequeña demora para que se note la animación al cargar la sección
+        const timer = setTimeout(() => {
+            setSpeed(300);
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <section className="app-promo" id="app-web">
             {/* Texto gigante de fondo (Stroke / Outline) */}
@@ -58,7 +70,10 @@ export default function HowItWorks() {
                                     <div className="ui-hero">
                                         <div className="ui-hero-text">Mi Conexión</div>
                                         <div className="ui-hero-circle">
-                                            <span>300</span>
+                                            <NumberFlow
+                                                value={speed}
+                                                format={{ style: 'decimal' }}
+                                            />
                                             <small>Mbps</small>
                                         </div>
                                     </div>
