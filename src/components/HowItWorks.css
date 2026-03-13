@@ -319,24 +319,7 @@
   border-radius: 0 0 4px 4px;
 }
 
-/* Animaciones */
-@keyframes floatLaptop {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.laptop-mockup {
-  animation: floatLaptop 6s ease-in-out infinite;
-}
+/* Animations moved to Framer Motion */
 
 /* ─── Responsive ─── */
 @media (max-width: 1024px) {

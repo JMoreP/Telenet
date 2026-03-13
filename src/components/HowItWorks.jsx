@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import NumberFlow from '@number-flow/react'
 import './HowItWorks.css'
 
@@ -41,7 +42,13 @@ export default function HowItWorks() {
 
             <div className="container app-promo__inner">
                 {/* Lado Izquierdo: Contenido Textual */}
-                <div className="app-promo__content fade-in-up">
+                <motion.div 
+                    className="app-promo__content"
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     <h2 className="app-promo__title">
                         Maneja tu conexión al alcance de un <br /><span>clic</span>
                     </h2>
@@ -54,11 +61,27 @@ export default function HowItWorks() {
                             <path d="M7 17L17 7M17 7H7M17 7V17" /> {/* Flecha diagonal (Arriba-Derecha) */}
                         </svg>
                     </a>
-                </div>
+                </motion.div>
 
                 {/* Lado Derecho: Render de Laptop (CSS Puro) */}
-                <div className="app-promo__visual fade-in-up delay-2">
-                    <div className="laptop-mockup">
+                <motion.div 
+                    className="app-promo__visual"
+                    initial={{ opacity: 0, x: 30, rotateY: 20 }}
+                    whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                >
+                    <motion.div 
+                        className="laptop-mockup"
+                        animate={{ 
+                            y: [0, -10, 0],
+                        }}
+                        transition={{ 
+                            duration: 5, 
+                            repeat: Infinity, 
+                            ease: "easeInOut" 
+                        }}
+                    >
                         <div className="laptop-screen">
                             <div className="laptop-screen-inner">
                                 {/* Pantalla / Interfaz UI Simulada */}
@@ -87,8 +110,8 @@ export default function HowItWorks() {
                                 <div className="laptop-notch"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     )

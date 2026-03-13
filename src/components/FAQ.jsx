@@ -1,5 +1,6 @@
-import './FAQ.css'
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import './FAQ.css'
 
 const faqs = [
     {
@@ -43,25 +44,57 @@ export default function FAQ() {
                     </p>
                 </div>
 
-                <div className="faq__list">
+                <motion.div 
+                    className="faq__list"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                >
                     {faqs.map((faq, i) => (
-                        <div
+                        <motion.div
                             key={i}
                             className={`faq__item ${open === i ? 'faq__item--open' : ''}`}
                             onClick={() => setOpen(open === i ? null : i)}
+                            variants={{
+                                hidden: { opacity: 0, y: 15 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                            }}
                         >
                             <div className="faq__question">
                                 <span>{faq.q}</span>
-                                <div className="faq__toggle">
+                                <motion.div 
+                                    className="faq__toggle"
+                                    animate={{ rotate: open === i ? 180 : 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
                                     <span>{open === i ? '−' : '+'}</span>
-                                </div>
+                                </motion.div>
                             </div>
-                            <div className="faq__answer">
-                                <p>{faq.a}</p>
-                            </div>
-                        </div>
+                            <AnimatePresence>
+                                {open === i && (
+                                    <motion.div 
+                                        className="faq__answer"
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    >
+                                        <p>{faq.a}</p>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     )

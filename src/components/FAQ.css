@@ -107,13 +107,7 @@
 }
 
 .faq__answer {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-}
-
-.faq__item--open .faq__answer {
-  max-height: 200px;
 }
 
 .faq__answer p {

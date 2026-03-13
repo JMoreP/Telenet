@@ -32,11 +32,10 @@ export default function Navbar() {
                 </nav>
 
                 {/* CTA Button */}
-                <a href="#contacto" className="btn-primary navbar__cta">
-                    Contratar Ahora
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
+                <a href="#contacto" className="btn-17 navbar__cta">
+                    <span className="text-container">
+                        <span className="text">Contratar Ahora</span>
+                    </span>
                 </a>
 
                 {/* Hamburger */}
@@ -57,8 +56,10 @@ export default function Navbar() {
                         {link}
                     </a>
                 ))}
-                <a href="#contacto" className="btn-primary" onClick={() => setMenuOpen(false)}>
-                    Contratar Ahora
+                <a href="#contacto" className="btn-17" onClick={() => setMenuOpen(false)}>
+                    <span className="text-container">
+                        <span className="text">Contratar Ahora</span>
+                    </span>
                 </a>
             </div>
         </header>

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './Coverage.css';
 
 const GOOGLE_MAPS_EMBED = "https://maps.google.com/maps?q=Corporacion+Telenet+de+Venezuela,+Barinas&t=&z=17&ie=UTF8&iwloc=&output=embed";
@@ -8,18 +9,44 @@ export default function Coverage() {
             <div className="coverage__bg-glow"></div>
 
             <div className="container">
-                <div className="coverage__header">
+                <motion.div 
+                    className="coverage__header"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                >
                     <h2 className="section-title">
                         Nuestra <span>Sede Principal</span>
                     </h2>
                     <p className="section-subtitle">
                         Encuéntranos en el centro tecnológico de Barinas. Ven y descubre el poder de la fibra óptica real.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="bento-grid">
+                <motion.div 
+                    className="bento-grid"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.15
+                            }
+                        }
+                    }}
+                >
                     {/* Bento Card 1: Mapa Interactivo (Span 8 cols) */}
-                    <div className="bento-card bento-map">
+                    <motion.div 
+                        className="bento-card bento-map"
+                        variants={{
+                            hidden: { opacity: 0, scale: 0.95 },
+                            visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+                        }}
+                    >
                         <div className="bento-map__badge">
                             <span className="live-dot"></span> Telenet HQ
                         </div>
@@ -33,10 +60,16 @@ export default function Coverage() {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                         />
-                    </div>
+                    </motion.div>
 
                     {/* Bento Card 2: Dirección (Span 4 cols) */}
-                    <div className="bento-card bento-info fade-in-up">
+                    <motion.div 
+                        className="bento-card bento-info"
+                        variants={{
+                            hidden: { opacity: 0, x: 20 },
+                            visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                        }}
+                    >
                         <div className="bento-icon">
                             <svg fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -47,10 +80,16 @@ export default function Coverage() {
                         <p>Local 2-97, Sector Independencia I<br />
                         Planta baja, C. Atahualpa<br />
                         Barinas 5201, Venezuela</p>
-                    </div>
+                    </motion.div>
 
                     {/* Bento Card 3: Horarios (Span 4 cols) */}
-                    <div className="bento-card bento-hours fade-in-up" style={{ animationDelay: '0.1s' }}>
+                    <motion.div 
+                        className="bento-card bento-hours"
+                        variants={{
+                            hidden: { opacity: 0, x: 20 },
+                            visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                        }}
+                    >
                         <div className="bento-icon bento-icon--blue">
                             <svg fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -66,15 +105,18 @@ export default function Coverage() {
                                 <span>8:00 AM – 12:00 PM</span>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Bento Card 4: Action / Rutas (Span 4 cols) */}
-                    <a
+                    <motion.a
                         href="https://www.google.com/maps/place/Corporacion+Telenet+de+Venezuela/@8.6194813,-70.2298205,690m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8e7b582de59f2ff1:0xed34546717687d82"
                         target="_blank"
                         rel="noreferrer"
-                        className="bento-card bento-action fade-in-up"
-                        style={{ animationDelay: '0.2s' }}
+                        className="bento-card bento-action"
+                        variants={{
+                            hidden: { opacity: 0, x: 20 },
+                            visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                        }}
                     >
                         <div className="bento-action__content">
                             <h3>Llegar Ahora</h3>
@@ -85,8 +127,8 @@ export default function Coverage() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                             </svg>
                         </div>
-                    </a>
-                </div>
+                    </motion.a>
+                </motion.div>
             </div>
         </section>
     );
