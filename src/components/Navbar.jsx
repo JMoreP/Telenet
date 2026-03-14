@@ -1,5 +1,6 @@
 import './Navbar.css'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
@@ -14,7 +15,12 @@ export default function Navbar() {
     const links = ['Planes', 'Beneficios', 'Cobertura', 'FAQ']
 
     return (
-        <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+        <motion.header 
+            className={`navbar ${scrolled || menuOpen ? 'navbar--scrolled' : ''}`}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
             <div className="container navbar__inner">
                 {/* Logo */}
                 <a href="#hero" className="navbar__logo" onClick={() => setMenuOpen(false)}>
@@ -62,6 +68,6 @@ export default function Navbar() {
                     </span>
                 </a>
             </div>
-        </header>
+        </motion.header>
     )
 }

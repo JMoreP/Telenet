@@ -5,16 +5,18 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: #FFFFFF;
-  border-bottom: 1px solid var(--border-color);
-  padding: 1rem 0;
-  transition: var(--transition);
+  z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  padding: 1.2rem 0;
+  transition: all 0.4s ease;
 }
 
 .navbar--scrolled {
   padding: 0.8rem 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  /* Sombra al hacer scroll */
 }
 
 .navbar__inner {
@@ -40,8 +42,13 @@
 .navbar__brand {
   font-size: 1.3rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: #fff;
   letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.navbar--scrolled .navbar__brand {
+  color: var(--text-primary);
 }
 
 .navbar__brand span {
@@ -56,7 +63,7 @@
 
 .navbar__link {
   padding: 0.5rem 0.9rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   font-size: 0.92rem;
   border-radius: var(--radius-sm);
@@ -64,6 +71,15 @@
 }
 
 .navbar__link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar--scrolled .navbar__link {
+  color: var(--text-secondary);
+}
+
+.navbar--scrolled .navbar__link:hover {
   color: var(--text-primary);
   background: var(--border-color);
 }
@@ -88,9 +104,13 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--text-primary);
+  background: #fff;
   border-radius: 2px;
   transition: var(--transition);
+}
+
+.navbar--scrolled .navbar__burger span {
+  background: var(--text-primary);
 }
 
 .navbar__burger.open span:nth-child(1) {
@@ -246,7 +266,7 @@
 
   .navbar__mobile {
     display: flex;
-    padding: 2rem 1rem;
+
     align-items: center;
   }
 

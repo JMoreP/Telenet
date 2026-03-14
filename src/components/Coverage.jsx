@@ -9,7 +9,7 @@ export default function Coverage() {
             <div className="coverage__bg-glow"></div>
 
             <div className="container">
-                <motion.div 
+                <motion.div
                     className="coverage__header"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function Coverage() {
                     </p>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                     className="bento-grid"
                     initial="hidden"
                     whileInView="visible"
@@ -40,16 +40,14 @@ export default function Coverage() {
                     }}
                 >
                     {/* Bento Card 1: Mapa Interactivo (Span 8 cols) */}
-                    <motion.div 
+                    <motion.div
                         className="bento-card bento-map"
                         variants={{
                             hidden: { opacity: 0, scale: 0.95 },
                             visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
                         }}
                     >
-                        <div className="bento-map__badge">
-                            <span className="live-dot"></span> Telenet HQ
-                        </div>
+
                         <iframe
                             title="Telenet Sede Principal - Barinas"
                             src={GOOGLE_MAPS_EMBED}
@@ -63,7 +61,7 @@ export default function Coverage() {
                     </motion.div>
 
                     {/* Bento Card 2: Dirección (Span 4 cols) */}
-                    <motion.div 
+                    <motion.div
                         className="bento-card bento-info"
                         variants={{
                             hidden: { opacity: 0, x: 20 },
@@ -78,12 +76,12 @@ export default function Coverage() {
                         </div>
                         <h3>Edificio Telenet</h3>
                         <p>Local 2-97, Sector Independencia I<br />
-                        Planta baja, C. Atahualpa<br />
-                        Barinas 5201, Venezuela</p>
+                            Planta baja, C. Atahualpa<br />
+                            Barinas 5201, Venezuela</p>
                     </motion.div>
 
                     {/* Bento Card 3: Horarios (Span 4 cols) */}
-                    <motion.div 
+                    <motion.div
                         className="bento-card bento-hours"
                         variants={{
                             hidden: { opacity: 0, x: 20 },

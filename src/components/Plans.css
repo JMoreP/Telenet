@@ -271,21 +271,77 @@
   color: var(--text-muted);
 }
 
-/* ── Responsivo: Carrusel apilado vertical o encogido ── */
-@media (max-width: 900px) {
-  .plans__grid {
-    min-height: 550px;
-    transform: scale(0.9);
-  }
+/* ── Carrusel Wrapper & Arrows ── */
+.plans__carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
 }
 
-@media (max-width: 600px) {
-  .plans__grid {
-    min-height: auto;
+.plans__arrow {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--orange-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.plans__arrow:hover {
+  background: var(--orange-primary);
+  color: #fff;
+  border-color: var(--orange-primary);
+}
+
+.plans__arrow--left {
+  left: -10px;
+}
+
+.plans__arrow--right {
+  right: -10px;
+}
+
+/* ── Responsivo: Carrusel Horizontal Móvil ── */
+@media (max-width: 900px) {
+  .plans__arrow {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-top: 2rem;
+  }
+
+  .plans__grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* CRÍTICO: Anula el "center" heredado de escritorio */
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3rem 0; /* padding horizontal 0, el espacio lo dan los pseudo-elementos */
+    margin: 0;
+
+    /* Scroll Settings */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .plans__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .plans__grid::before,
+  .plans__grid::after {
+    content: '';
+    flex: 0 0 7.5vw; /* Espacio exacto libre a los lados para centrar tarjeta de 85vw */
   }
 
   .plan-card,
@@ -293,9 +349,29 @@
   .plan-card:nth-child(2),
   .plan-card:nth-child(3) {
     position: relative;
-    width: 100%;
+    flex: 0 0 85vw;
     max-width: 340px;
-    opacity: 1;
-    z-index: 2;
+    height: 100%;
+    margin: 0;
+    scroll-snap-align: center;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .plans__arrow {
+    /* Mover las flechas un poco más arriba si hace falta, o dejarlas centradas */
+    top: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .plan-card,
+  .plan-card:nth-child(1),
+  .plan-card:nth-child(2),
+  .plan-card:nth-child(3) {
+    flex: 0 0 90vw;
   }
 }

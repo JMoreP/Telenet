@@ -50,6 +50,20 @@ const plans = [
 
 export default function Plans() {
     const sectionRef = useRef(null)
+    const gridRef = useRef(null)
+
+    const scroll = (direction) => {
+        if (gridRef.current) {
+            const { clientWidth } = gridRef.current;
+            // Approx width of a card + gap
+            const scrollAmount = clientWidth > 600 ? 340 : clientWidth * 0.85;
+            gridRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <section className="plans" id="planes" ref={sectionRef}>
             <div className="plans__bg-glow" />
@@ -70,71 +84,89 @@ export default function Plans() {
                     </p>
                 </motion.div>
 
-                <div className="plans__grid">
-                    {plans.map((plan, i) => {
-                        const offsets = [-105, 0, 105];
-                        const baseScale = [0.9, 1, 0.9];
-                        
-                        return (
-                            <motion.div
-                                key={i}
-                                className={`plan-card plan-card--${plan.color}`}
-                                initial={{ 
-                                    opacity: 0, 
-                                    y: 30, 
-                                    x: `${offsets[i]}%`
-                                }}
-                                whileInView={{ 
-                                    opacity: 1, 
-                                    y: 0, 
-                                    x: `${offsets[i]}%`
-                                }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ 
-                                    duration: 0.8, 
-                                    delay: i * 0.1,
-                                    ease: "easeOut" 
-                                }}
-                                whileHover={{ 
-                                    y: -10, 
-                                    scale: baseScale[i] + 0.05,
-                                    transition: { duration: 0.3 } 
-                                }}
-                            >
-                                {plan.popular && (
-                                    <div className="plan-card__badge">⭐ Más Popular</div>
-                                )}
+                <div className="plans__carousel-wrapper">
+                    <button
+                        className="plans__arrow plans__arrow--left"
+                        onClick={() => scroll('left')}
+                        aria-label="Ver plan anterior"
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6" /></svg>
+                    </button>
 
-                                <div className="plan-card__header">
-                                    <div className="plan-card__name">{plan.name}</div>
-                                    <div className="plan-card__speed">
-                                        <span className="plan-speed-value">{plan.speed}</span>
-                                        <span className="plan-speed-unit">Mbps</span>
+                    <div className="plans__grid" ref={gridRef}>
+                        {plans.map((plan, i) => {
+                            const offsets = [-105, 0, 105];
+                            const baseScale = [0.9, 1, 0.9];
+
+                            return (
+                                <motion.div
+                                    key={i}
+                                    className={`plan-card plan-card--${plan.color}`}
+                                    initial={{
+                                        opacity: 0,
+                                        y: 30,
+                                        x: `${offsets[i]}%`
+                                    }}
+                                    whileInView={{
+                                        opacity: 1,
+                                        y: 0,
+                                        x: `${offsets[i]}%`
+                                    }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: i * 0.1,
+                                        ease: "easeOut"
+                                    }}
+                                    whileHover={{
+                                        y: -10,
+                                        scale: baseScale[i] + 0.05,
+                                        transition: { duration: 0.3 }
+                                    }}
+                                >
+                                    {plan.popular && (
+                                        <div className="plan-card__badge">⭐ Más Popular</div>
+                                    )}
+
+                                    <div className="plan-card__header">
+                                        <div className="plan-card__name">{plan.name}</div>
+                                        <div className="plan-card__speed">
+                                            <span className="plan-speed-value">{plan.speed}</span>
+                                            <span className="plan-speed-unit">Mbps</span>
+                                        </div>
+                                        <div className="plan-card__symmetry">Simétrico ↑↓</div>
                                     </div>
-                                    <div className="plan-card__symmetry">Simétrico ↑↓</div>
-                                </div>
 
-                                <div className="plan-card__price">
-                                    <span className="plan-price-currency">$</span>
-                                    <span className="plan-price-value">{plan.price}</span>
-                                    <span className="plan-price-period">/mes</span>
-                                </div>
+                                    <div className="plan-card__price">
+                                        <span className="plan-price-currency">$</span>
+                                        <span className="plan-price-value">{plan.price}</span>
+                                        <span className="plan-price-period">/mes</span>
+                                    </div>
 
-                                <ul className="plan-card__perks">
-                                    {plan.perks.map((perk, j) => (
-                                        <li key={j} className="plan-perk">
-                                            <span className="plan-perk__check">✓</span>
-                                            {perk}
-                                        </li>
-                                    ))}
-                                </ul>
+                                    <ul className="plan-card__perks">
+                                        {plan.perks.map((perk, j) => (
+                                            <li key={j} className="plan-perk">
+                                                <span className="plan-perk__check">✓</span>
+                                                {perk}
+                                            </li>
+                                        ))}
+                                    </ul>
 
-                                <a href="#contacto" className={`plan-card__cta ${plan.popular ? 'btn-primary' : 'btn-outline'}`}>
-                                    {plan.popular ? '¡Lo quiero!' : 'Contratar'}
-                                </a>
-                            </motion.div>
-                        )
-                    })}
+                                    <a href="#contacto" className={`plan-card__cta ${plan.popular ? 'btn-primary' : 'btn-outline'}`}>
+                                        {plan.popular ? '¡Lo quiero!' : 'Contratar'}
+                                    </a>
+                                </motion.div>
+                            )
+                        })}
+                    </div>
+
+                    <button
+                        className="plans__arrow plans__arrow--right"
+                        onClick={() => scroll('right')}
+                        aria-label="Ver plan siguiente"
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 18l6-6-6-6" /></svg>
+                    </button>
                 </div>
 
                 <p className="plans__footnote">
