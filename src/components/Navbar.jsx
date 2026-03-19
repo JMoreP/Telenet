@@ -15,7 +15,7 @@ export default function Navbar() {
     const links = ['Planes', 'Beneficios', 'Cobertura', 'FAQ']
 
     return (
-        <motion.header 
+        <motion.header
             className={`navbar ${scrolled || menuOpen ? 'navbar--scrolled' : ''}`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
@@ -24,7 +24,7 @@ export default function Navbar() {
             <div className="container navbar__inner">
                 {/* Logo */}
                 <a href="#hero" className="navbar__logo" onClick={() => setMenuOpen(false)}>
-                    <img src="/telenet.jpg" alt="Telenet Logo" className="navbar__logo-img" />
+                    <img src="/telenet.png" alt="Telenet Logo" className="navbar__logo-img" />
                     <span className="navbar__brand">Tele<span>net</span></span>
                 </a>
 

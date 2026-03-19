@@ -12,7 +12,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="footer__brand">
                         <div className="footer__logo">
-                            <img src="/telenet.jpg" alt="Telenet Logo" className="footer__logo-img" />
+                            <img src="/telenet.png" alt="Telenet Logo" className="footer__logo-img" />
                             <span className="footer__brand-name">Tele<span>net</span></span>
                         </div>
                         <p className="footer__tagline">
@@ -67,7 +67,7 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-                
+
                 <div className="footer__bottom">
                     <p className="footer__copy">© {year} Telenet Fibra Óptica. Todos los derechos reservados.</p>
                     <div className="footer__legal">
