@@ -5,6 +5,7 @@ export default function Footer() {
 
     return (
         <footer className="footer">
+            <div className="footer__overlay"></div>
             <div className="gradient-line" />
             <div className="container">
                 <div className="footer__main">
@@ -66,7 +67,7 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-
+                
                 <div className="footer__bottom">
                     <p className="footer__copy">© {year} Telenet Fibra Óptica. Todos los derechos reservados.</p>
                     <div className="footer__legal">
@@ -77,5 +78,6 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+
     )
 }

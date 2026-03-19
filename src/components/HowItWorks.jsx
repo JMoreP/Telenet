@@ -15,11 +15,11 @@ const steps = [
         icon: '🔧',
         title: 'Instalamos',
         desc: 'Equipo técnico local',
-    },
+    }, 
     {
         number: '03',
         icon: '🚀',
-        title: '¡A navegar!',
+        title: '¡A navegar!',  
         desc: 'Fibra en 48 horas',
     },
 ]
@@ -38,7 +38,7 @@ export default function HowItWorks() {
     return (
         <section className="app-promo" id="app-web">
             {/* Texto gigante de fondo (Stroke / Outline) */}
-            <div className="app-promo__bg-text">WEB</div>
+            <div className="app-promo__bg-text">TELENET</div>
 
             <div className="container app-promo__inner">
                 {/* Lado Izquierdo: Contenido Textual */}
@@ -50,13 +50,14 @@ export default function HowItWorks() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <h2 className="app-promo__title">
-                        Maneja tu conexión al alcance de un <br /><span>clic</span>
+                        "Conectando tu mundo a las <br /><span>telecomunicaciones</span>"
                     </h2>
                     <p className="app-promo__desc">
-                        Ingresa a nuestra <strong>versión web</strong> desde cualquier navegador y accede al panel de control total de tu servicio. Ideal para esos momentos en los que necesitas gestionar todo desde tu computadora o laptop a la mano.
+                        Somos un equipo enfocado en brindar la mejor experiencia en <strong>servicios de telecomunicaciones</strong> para nuestros clientes. 
+                        Comprometidos en el desarrollo de innovación tecnológico no solo de la región sino también a nivel nacional, a través de suministro de servicios de conectividad e internet alta velocidad y soluciones tecnológica en software y Hardware
                     </p>
                     <a href="#ingresar" className="btn-primary app-promo__cta">
-                        ¡Accede ahora!
+                        Accede ahora
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                             <path d="M7 17L17 7M17 7H7M17 7V17" /> {/* Flecha diagonal (Arriba-Derecha) */}
                         </svg>
@@ -87,7 +88,7 @@ export default function HowItWorks() {
                                 {/* Pantalla / Interfaz UI Simulada */}
                                 <div className="ui-mockup">
                                     <div className="ui-nav">
-                                        <div className="ui-nav-brand">Telenet</div>
+                                        <div className="ui-nav-brand">Corporacion telenet de venezuela</div>
                                         <div className="ui-nav-avatar"></div>
                                     </div>
                                     <div className="ui-hero">
