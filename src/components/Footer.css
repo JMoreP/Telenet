@@ -6,7 +6,16 @@
   background-repeat: no-repeat;
   padding-top: 0;
   position: relative;
+
+
+
+  /* Colores de texto para fondo oscuro (Opción 1) */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(255, 255, 255, 0.1);
 }
+
 .footer__overlay {
   position: absolute;
   top: 0;
@@ -15,6 +24,12 @@
   height: 100%;
   background: linear-gradient(90deg, rgba(8, 2, 0, 0.95) 0%, rgba(20, 5, 0, 0.6) 45%, rgba(40, 10, 0, 0) 100%);
   z-index: 1;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 2;
+  /* Encima del overlay */
 }
 
 .footer__main {
@@ -152,11 +167,32 @@
 
 @media (max-width: 900px) {
   .footer__main {
-    grid-template-columns: 1fr 1fr;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
   }
 
   .footer__brand {
     grid-column: 1 / -1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer__tagline {
+    text-align: center;
+  }
+
+  .footer__col {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer__links {
+    justify-content: center;
+    align-items: center;
   }
 }
 
