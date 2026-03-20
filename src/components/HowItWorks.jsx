@@ -15,11 +15,11 @@ const steps = [
         icon: '🔧',
         title: 'Instalamos',
         desc: 'Equipo técnico local',
-    }, 
+    },
     {
         number: '03',
         icon: '🚀',
-        title: '¡A navegar!',  
+        title: '¡A navegar!',
         desc: 'Fibra en 48 horas',
     },
 ]
@@ -42,7 +42,7 @@ export default function HowItWorks() {
 
             <div className="container app-promo__inner">
                 {/* Lado Izquierdo: Contenido Textual */}
-                <motion.div 
+                <motion.div
                     className="app-promo__content"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -53,7 +53,7 @@ export default function HowItWorks() {
                         "Conectando tu mundo a las <br /><span>telecomunicaciones</span>"
                     </h2>
                     <p className="app-promo__desc">
-                        Somos un equipo enfocado en brindar la mejor experiencia en <strong>servicios de telecomunicaciones</strong> para nuestros clientes. 
+                        Somos un equipo enfocado en brindar la mejor experiencia en <strong>servicios de telecomunicaciones</strong> para nuestros clientes.
                         Comprometidos en el desarrollo de innovación tecnológico no solo de la región sino también a nivel nacional, a través de suministro de servicios de conectividad e internet alta velocidad y soluciones tecnológica en software y Hardware
                     </p>
                     <a href="#ingresar" className="btn-primary app-promo__cta">
@@ -65,22 +65,22 @@ export default function HowItWorks() {
                 </motion.div>
 
                 {/* Lado Derecho: Render de Laptop (CSS Puro) */}
-                <motion.div 
+                <motion.div
                     className="app-promo__visual"
                     initial={{ opacity: 0, x: 30, rotateY: 20 }}
                     whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <motion.div 
+                    <motion.div
                         className="laptop-mockup"
-                        animate={{ 
+                        animate={{
                             y: [0, -10, 0],
                         }}
-                        transition={{ 
-                            duration: 5, 
-                            repeat: Infinity, 
-                            ease: "easeInOut" 
+                        transition={{
+                            duration: 5,
+                            repeat: Infinity,
+                            ease: "easeInOut"
                         }}
                     >
                         <div className="laptop-screen">
