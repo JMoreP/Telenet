@@ -17,17 +17,17 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <div className="gradient-line" />
+        
 
         <HowItWorks />
-        <div className="gradient-line" />
+        
         <Plans />
-        <div className="gradient-line" />
+        
         <Coverage />
-        <div className="gradient-line" />
+        
 
         <FAQ />
-        <div className="gradient-line" />
+       
       </main>
       <Footer />
       <WhatsAppButton />
