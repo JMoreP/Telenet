@@ -14,11 +14,12 @@
 
 .navbar--scrolled {
   padding: 0.8rem 0;
-  background: rgba(10, 10, 12, 0.85); /* Dark glassmorphism */
+  background: rgba(224, 229, 236, 0.85);
+  /* Match the new Soft Steel color */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .navbar__inner {
@@ -51,7 +52,8 @@
 }
 
 .navbar--scrolled .navbar__brand {
-  color: #ffffff; /* Keep it white to contrast with dark navbar */
+  color: #0D1117;
+  /* Dark text for light scrolled navbar */
 }
 
 .navbar__brand span {
@@ -79,12 +81,12 @@
 }
 
 .navbar--scrolled .navbar__link {
-  color: rgba(255, 255, 255, 0.7);
+  color: #4A5568;
 }
 
 .navbar--scrolled .navbar__link:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  color: #0D1117;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .navbar__cta {
@@ -133,7 +135,8 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  background: #0A0A0C; /* Pitch black for mobile menu */
+  background: #0A0A0C;
+  /* Pitch black for mobile menu */
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 
   max-height: 0;

@@ -1,9 +1,7 @@
 /* ─── Coverage (Tech Map Split Layout) ─── */
 .coverage-tech {
   padding: 3rem 0;
-  /* Reduced to half */
-  /* Degradado Dark Slate premium: suave a la vista, contraste perfecto */
-  background: radial-gradient(circle at 50% -20%, #1E293B 0%, #0F172A 100%);
+  background: #E0E5EC; /* Soft Corporate Steel */
   position: relative;
   overflow: hidden;
 }
@@ -60,7 +58,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #fff;
+  color: #0D1117;
   letter-spacing: -0.02em;
 }
 
@@ -116,7 +114,7 @@
   display: block;
   font-family: monospace;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(13, 17, 23, 0.5);
   letter-spacing: 0.15em;
   margin-bottom: 0.8rem;
 }

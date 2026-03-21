@@ -2,8 +2,7 @@
 .app-promo {
   position: relative;
   padding: 6rem 0;
-  background: radial-gradient(circle at 50% -20%, #1E293B 0%, #0F172A 100%); /* Match Coverage Blue Slate */
-  /* Light mode sand cream base */
+  background: #E0E5EC; /* Soft Corporate Steel */
   overflow: hidden;
 }
 
@@ -68,9 +67,9 @@
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #ffffff;
+  color: #0D1117;
   letter-spacing: -0.02em;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
 }
 
 .tech-how-title span {
@@ -79,14 +78,14 @@
 
 .tech-how-desc {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85); /* Faint white for readability over dark slate */
+  color: #4A5568;
   line-height: 1.6;
 }
 
 .tech-how-desc strong {
-  color: #ffffff;
+  color: #0D1117;
   font-weight: 800;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
 }
 
 /* Call to Action Button */

@@ -61,21 +61,21 @@ export default function Hero() {
                     style={{ backgroundImage: `url(${slides[current].image})` }}
                 >
                     <div className="hero__overlay"></div>
-                    
+
                     <div className="container hero__content">
-                        <motion.div 
+                        <motion.div
                             className="hero__text-box"
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
                             <span className="hero__headline">{slides[current].headline}</span>
-                            <h1 
-                                className="hero__title" 
+                            <h1
+                                className="hero__title"
                                 dangerouslySetInnerHTML={{ __html: slides[current].title }}
                             />
                             <p className="hero__subtitle">{slides[current].subtitle}</p>
-                            
+
                             <div className="hero__actions">
                                 <a href={slides[current].link1} className="btn-17">
                                     <span className="text-container">
