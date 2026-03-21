@@ -1,336 +1,311 @@
-/* ─── App Promo (Estilo Light) ─── */
+/* ─── HowItWorks (Premium Dark Tech) ─── */
 .app-promo {
   position: relative;
-  padding: clamp(6rem, 12vw, 10rem) 0;
-  background-color: var(--bg-surface);
-  background-image: radial-gradient(rgba(240, 81, 35, 0.15) 1px, transparent 1px);
-  background-size: 30px 30px;
+  padding: 6rem 0;
+  background: radial-gradient(circle at 50% -20%, #1E293B 0%, #0F172A 100%); /* Match Coverage Blue Slate */
+  /* Light mode sand cream base */
   overflow: hidden;
 }
 
+/* Subtle tech grid for dark background */
 .app-promo::before {
-  content: "A P P  W E B \A C O N T R O L  T O T A L \A F I B R A  O P T I C A \A M A N A G E M E N T \A D A S H B O A R D \A / / / / / /";
-  white-space: pre-wrap;
+  content: "";
   position: absolute;
-  top: 5rem;
-  right: 5rem;
-  font-family: monospace;
-  font-size: 0.9rem;
-  line-height: 1.8;
-  letter-spacing: 0.3em;
-  color: var(--orange-primary);
-  opacity: 0.08;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(58, 180, 230, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 180, 230, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: -1px -1px;
   pointer-events: none;
   z-index: 0;
-  text-align: right;
-  user-select: none;
 }
 
-/* Marca de Agua Estilo "APP WEB" gigante */
 .app-promo__bg-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-70%, -120%);
-  font-size: clamp(8rem, 25vw, 22rem);
+  transform: translate(-50%, -50%);
+  font-size: clamp(8rem, 20vw, 18rem);
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 2px rgba(240, 81, 35, 0.20);
-  /* Trazo naranja sutil pero mucho más visible */
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.03);
   white-space: nowrap;
-  letter-spacing: 0.1em;
   pointer-events: none;
   z-index: 0;
   line-height: 1;
 }
 
-/* Contenedor Grid Principal */
 .app-promo__inner {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr 1.2fr;
   align-items: center;
-  gap: 5rem;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-/* ─── Contenido Izquierdo ─── */
-.app-promo__content {
+/* ─── Left Content ─── */
+.tech-how-content {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
-  max-width: 480px;
+  gap: 1.5rem;
 }
 
-.app-promo__title {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
-}
-
-.app-promo__title span {
+.tech-how-label {
+  font-family: monospace;
+  font-size: 0.85rem;
   color: var(--orange-primary);
-}
-
-.app-promo__desc {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-}
-
-.app-promo__desc strong {
-  color: var(--text-primary);
+  letter-spacing: 0.2em;
   font-weight: 700;
+  text-shadow: 0 0 10px rgba(240, 81, 35, 0.4);
 }
 
-/* Usa el botón primario del theme */
-.app-promo__cta {
+.tech-how-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.tech-how-title span {
+  color: var(--cyan-primary);
+}
+
+.tech-how-desc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85); /* Faint white for readability over dark slate */
+  line-height: 1.6;
+}
+
+.tech-how-desc strong {
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Call to Action Button */
+.tech-how-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid var(--orange-primary);
+  color: var(--orange-primary);
+  font-family: monospace;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
   width: fit-content;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
 }
 
-/* ─── Laptop Mockup CSS (Lado Derecho) ─── */
-.app-promo__visual {
+.tech-how-cta:hover {
+  background: rgba(240, 81, 35, 0.1);
+  box-shadow: 0 0 20px rgba(240, 81, 35, 0.2);
+}
+
+/* ─── Right Content: Laptop Terminal ─── */
+.tech-how-visual {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
-.laptop-mockup {
+.tech-laptop {
   position: relative;
   width: 100%;
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 600px;
 }
 
-/* Pantalla / Monitor (Bezel claro/gris sutil imitando aluminio/blanco) */
-.laptop-screen {
-  position: relative;
-  width: 90%;
-  aspect-ratio: 16 / 10;
-  background: #EAEAEA;
-  /* Marco plateado claro */
+.tech-laptop-screen {
+  background: #111;
   border-radius: 12px 12px 0 0;
-  padding: 12px 12px 18px 12px;
-  border: 1px solid #D5D5D5;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  padding: 10px 10px 15px 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
 }
 
-/* Webcam superior */
-.laptop-screen::before {
-  content: '';
+/* Webcam */
+.tech-laptop-screen::after {
+  content: "";
   position: absolute;
   top: 5px;
   left: 50%;
   transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
-  background: #888;
+  width: 4px;
+  height: 4px;
+  background: #444;
   border-radius: 50%;
 }
 
-/* Pantalla Real (Inner) */
-.laptop-screen-inner {
-  width: 100%;
-  height: 100%;
-  background: #FFFFFF;
+.tech-laptop-display {
+  background: #050505;
+  aspect-ratio: 16/10;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
-  border: 1px solid #EFEFEF;
-}
-
-/* --- Simulación UI Gráfica (Dashboard CSS Light) --- */
-.ui-mockup {
-  width: 100%;
-  height: 100%;
+  border: 1px solid #222;
   display: flex;
   flex-direction: column;
 }
 
-.ui-nav {
-  height: 36px;
-  background: #F9F9F9;
-  border-bottom: 1px solid #EEEDEB;
+/* Top bar of the OS */
+.tech-ui-nav {
+  height: 30px;
+  background: #111;
+  border-bottom: 1px solid #222;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 1rem;
-}
-
-.ui-nav-brand {
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #3D1100;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
   gap: 0.4rem;
 }
 
-.ui-nav-brand::before {
-  content: '';
-  display: inline-block;
+.tech-ui-nav-dot {
   width: 10px;
   height: 10px;
-  background: var(--orange-primary);
   border-radius: 50%;
 }
 
-.ui-nav-avatar {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #DDD;
+.tech-ui-nav-dot.red {
+  background: #ff5f56;
 }
 
-.ui-hero {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: linear-gradient(180deg, #FFF9F5 0%, #FFFFFF 100%);
+.tech-ui-nav-dot.yellow {
+  background: #ffbd2e;
 }
 
-.ui-hero-text {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-weight: 600;
-  text-transform: uppercase;
+.tech-ui-nav-dot.green {
+  background: #27c93f;
+}
+
+.tech-ui-nav-title {
+  margin-left: 1rem;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: #aaaaaa;
   letter-spacing: 0.1em;
 }
 
-.ui-hero-circle {
-  width: 140px;
-  height: 140px;
+/* Abstract Dashboard */
+.tech-ui-dash {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, rgba(58, 180, 230, 0.05) 0%, transparent 60%);
+  position: relative;
+}
+
+/* Grid lines inside laptop terminal */
+.tech-ui-dash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 1;
+}
+
+.tech-ui-ring {
+  position: relative;
+  z-index: 2;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  border: 6px solid var(--orange-primary);
+  border: 2px dashed rgba(58, 180, 230, 0.3);
+  border-top: 2px solid var(--cyan-primary);
+  border-right: 2px solid var(--orange-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(240, 81, 35, 0.1);
-  color: var(--text-primary);
+  animation: tech-spin 20s linear infinite;
+  box-shadow: 0 0 30px rgba(58, 180, 230, 0.1) inset;
 }
 
-.ui-hero-circle span {
-  font-size: 2.8rem;
+.tech-ui-ring-inner {
+  animation: tech-spin 20s linear infinite reverse;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tech-ui-ring-inner .val {
+  font-size: 3.5rem;
   font-weight: 900;
+  color: #fff;
+  font-family: monospace;
   line-height: 1;
-  letter-spacing: -0.05em;
-  color: var(--orange-primary);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
-.ui-hero-circle small {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  margin-top: 0.2rem;
+.tech-ui-ring-inner .lbl {
+  font-size: 0.7rem;
+  color: var(--cyan-primary);
+  letter-spacing: 0.2em;
+  margin-top: 0.3rem;
 }
 
+@keyframes tech-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-
-/* Base de la Laptop (Plateado/Blanco) */
-.laptop-base {
+/* Laptop Silver Base */
+.tech-laptop-base {
+  height: 14px;
+  background: linear-gradient(180deg, #E0E0E0 0%, #B0B0B0 100%);
+  border-radius: 0 0 16px 16px;
+  box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.2), 0 15px 30px rgba(0, 0, 0, 0.1);
   position: relative;
-  width: 100%;
-  height: 12px;
-  z-index: 2;
-  margin-top: -2px;
+  z-index: 10;
 }
 
-.laptop-base-top {
-  width: 100%;
-  height: 10px;
-  background: #D5D5D5;
-  border-radius: 0 0 12px 12px;
-}
-
-.laptop-base-bottom {
-  width: 96%;
-  margin: 0 auto;
-  height: 4px;
-  background: #B0B0B0;
-  border-radius: 0 0 8px 8px;
-  position: relative;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.laptop-notch {
+.tech-laptop-notch {
   position: absolute;
-  top: -8px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 4px;
-  background: #B0B0B0;
+  width: 60px;
+  height: 5px;
+  background: #A0A0A0;
   border-radius: 0 0 4px 4px;
 }
 
-/* Animations moved to Framer Motion */
-
-/* ─── Responsive ─── */
-@media (max-width: 1024px) {
+/* Responsive */
+@media (max-width: 968px) {
   .app-promo__inner {
+    grid-template-columns: 1fr;
     gap: 3rem;
   }
-}
 
-@media (max-width: 900px) {
-  .app-promo__inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 4rem;
-  }
-
-  .app-promo__content {
-    max-width: 600px;
-    margin: 0 auto;
+  .tech-how-content {
     align-items: center;
+    text-align: center;
   }
 
-  .ui-grid {
-    padding: 1rem;
-    gap: 0.5rem;
+  .tech-how-title {
+    font-size: 2.5rem;
   }
 
-  .ui-hero-circle {
-    width: 100px;
-    height: 100px;
-  }
-
-  .ui-hero-circle span {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .app-promo {
-    padding: 4rem 0 5rem;
-  }
-
-  .laptop-screen {
-    width: 96%;
-    padding: 8px 8px 12px 8px;
-  }
-
-  .ui-grid {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .ui-hero {
-    padding: 1rem;
+  .tech-step-item {
+    text-align: left;
   }
 }

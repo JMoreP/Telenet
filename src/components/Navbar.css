@@ -14,11 +14,11 @@
 
 .navbar--scrolled {
   padding: 0.8rem 0;
-  background: #FAFAFB;
-  background: rgba(250, 250, 251, 0.6);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: rgba(10, 10, 12, 0.85); /* Dark glassmorphism */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .navbar__inner {
@@ -42,6 +42,7 @@
 }
 
 .navbar__brand {
+  font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 800;
   color: #fff;
@@ -50,7 +51,7 @@
 }
 
 .navbar--scrolled .navbar__brand {
-  color: var(--text-primary);
+  color: #ffffff; /* Keep it white to contrast with dark navbar */
 }
 
 .navbar__brand span {
@@ -78,12 +79,12 @@
 }
 
 .navbar--scrolled .navbar__link {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .navbar--scrolled .navbar__link:hover {
-  color: var(--text-primary);
-  background: var(--border-color);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .navbar__cta {
@@ -112,7 +113,7 @@
 }
 
 .navbar--scrolled .navbar__burger span {
-  background: var(--text-primary);
+  background: #ffffff;
 }
 
 .navbar__burger.open span:nth-child(1) {
@@ -132,12 +133,13 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  background: #FFFFFF;
+  background: #0A0A0C; /* Pitch black for mobile menu */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .navbar__mobile--open {
@@ -146,14 +148,15 @@
 
 .navbar__mobile-link {
   padding: 0.8rem 1rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
   border-radius: var(--radius-sm);
   transition: var(--transition);
 }
 
 .navbar__mobile-link:hover {
-  color: var(--cyan-primary);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* ─── Special Button: btn-17 ─── */
@@ -165,7 +168,7 @@
   background-image: none;
   color: #fff;
   cursor: pointer;
-  font-family: inherit;
+  font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 800;
   line-height: 1.5;

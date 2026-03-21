@@ -313,12 +313,6 @@
   letter-spacing: 0.1em;
 }
 
-.tech-pin-label .pin-subtitle {
-  font-family: monospace;
-  font-size: 0.6rem;
-  color: var(--orange-primary);
-  letter-spacing: 0.15em;
-}
 
 /* Responsive */
 @media (max-width: 968px) {

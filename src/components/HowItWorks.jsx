@@ -6,21 +6,18 @@ import './HowItWorks.css'
 const steps = [
     {
         number: '01',
-        icon: '📋',
-        title: 'Elegís tu Plan',
-        desc: 'Elige tu velocidad ideal',
+        title: 'Verificamos Cobertura',
+        desc: 'Evaluamos tu sector y agendamos tu visita técnica.',
     },
     {
         number: '02',
-        icon: '🔧',
-        title: 'Instalamos',
-        desc: 'Equipo técnico local',
+        title: 'Instalación de Fibra',
+        desc: 'Desplegamos el cableado y el hardware en tiempo récord.',
     },
     {
         number: '03',
-        icon: '🚀',
-        title: '¡A navegar!',
-        desc: 'Fibra en 48 horas',
+        title: 'Online a Alta Velocidad',
+        desc: 'Señal activa. Comienza a navegar sin límites de forma inmediata.',
     },
 ]
 
@@ -28,88 +25,80 @@ export default function HowItWorks() {
     const [speed, setSpeed] = useState(0);
 
     useEffect(() => {
-        // Pequeña demora para que se note la animación al cargar la sección
         const timer = setTimeout(() => {
-            setSpeed(300);
+            setSpeed(300); // Meta speed for the dashboard
         }, 1000);
         return () => clearTimeout(timer);
     }, []);
 
     return (
         <section className="app-promo" id="app-web">
-            {/* Texto gigante de fondo (Stroke / Outline) */}
-            <div className="app-promo__bg-text">TELENET</div>
+            <div className="app-promo__bg-text">TELENET_OS</div>
 
-            <div className="container app-promo__inner">
-                {/* Lado Izquierdo: Contenido Textual */}
+            <div className="app-promo__inner">
+                {/* Lado Izquierdo: Contenido Original Restaurado */}
                 <motion.div
-                    className="app-promo__content"
+                    className="tech-how-content"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h2 className="app-promo__title">
+                    <span className="tech-how-label">// APP WEB</span>
+                    <h2 className="tech-how-title">
                         "Conectando tu mundo a las <br /><span>telecomunicaciones</span>"
                     </h2>
-                    <p className="app-promo__desc">
+                    <p className="tech-how-desc">
                         Somos un equipo enfocado en brindar la mejor experiencia en <strong>servicios de telecomunicaciones</strong> para nuestros clientes.
-                        Comprometidos en el desarrollo de innovación tecnológico no solo de la región sino también a nivel nacional, a través de suministro de servicios de conectividad e internet alta velocidad y soluciones tecnológica en software y Hardware
+                        Comprometidos en el desarrollo de innovación tecnológico no solo de la región sino también a nivel nacional, a través de suministro de servicios de conectividad e internet alta velocidad y soluciones tecnológica en software y Hardware.
                     </p>
-                    <a href="#ingresar" className="btn-primary app-promo__cta">
+
+                    <a href="#ingresar" className="tech-how-cta">
                         Accede ahora
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" /> {/* Flecha diagonal (Arriba-Derecha) */}
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
                         </svg>
                     </a>
                 </motion.div>
 
-                {/* Lado Derecho: Render de Laptop (CSS Puro) */}
+                {/* Lado Derecho: Laptop Terminal */}
                 <motion.div
-                    className="app-promo__visual"
-                    initial={{ opacity: 0, x: 30, rotateY: 20 }}
+                    className="tech-how-visual"
+                    initial={{ opacity: 0, x: 30, rotateY: -10 }}
                     whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
                     <motion.div
-                        className="laptop-mockup"
-                        animate={{
-                            y: [0, -10, 0],
-                        }}
-                        transition={{
-                            duration: 5,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
+                        className="tech-laptop"
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                     >
-                        <div className="laptop-screen">
-                            <div className="laptop-screen-inner">
-                                {/* Pantalla / Interfaz UI Simulada */}
-                                <div className="ui-mockup">
-                                    <div className="ui-nav">
-                                        <div className="ui-nav-brand">Corporacion telenet de venezuela</div>
-                                        <div className="ui-nav-avatar"></div>
-                                    </div>
-                                    <div className="ui-hero">
-                                        <div className="ui-hero-text">Mi Conexión</div>
-                                        <div className="ui-hero-circle">
-                                            <NumberFlow
-                                                value={speed}
-                                                format={{ style: 'decimal' }}
-                                            />
-                                            <small>Mbps</small>
+                        <div className="tech-laptop-screen">
+                            <div className="tech-laptop-display">
+                                {/* Navegación SO (OS) */}
+                                <div className="tech-ui-nav">
+                                    <div className="tech-ui-nav-dot red"></div>
+                                    <div className="tech-ui-nav-dot yellow"></div>
+                                    <div className="tech-ui-nav-dot green"></div>
+                                    <span className="tech-ui-nav-title">Corporación Telenet de Venezuela</span>
+                                </div>
+                                {/* UI Dashboard Node */}
+                                <div className="tech-ui-dash">
+                                    <div className="tech-ui-ring">
+                                        <div className="tech-ui-ring-inner">
+                                            <div className="lbl">MI CONEXIÓN</div>
+                                            <div className="val">
+                                                <NumberFlow value={speed} format={{ style: 'decimal' }} />
+                                            </div>
+                                            <div className="lbl">Mbps</div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-                        <div className="laptop-base">
-                            <div className="laptop-base-top"></div>
-                            <div className="laptop-base-bottom">
-                                <div className="laptop-notch"></div>
-                            </div>
+                        <div className="tech-laptop-base">
+                            <div className="tech-laptop-notch"></div>
                         </div>
                     </motion.div>
                 </motion.div>

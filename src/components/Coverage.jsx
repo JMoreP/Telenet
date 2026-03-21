@@ -115,7 +115,7 @@ export default function Coverage() {
                             </div>
                             <div className="tech-pin-label">
                                 <span className="pin-title">BARINAS</span>
-                                <span className="pin-subtitle">HQ NODO CENTRAL</span>
+
                             </div>
                         </div>
                     </div>

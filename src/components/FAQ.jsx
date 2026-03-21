@@ -33,22 +33,23 @@ export default function FAQ() {
     const [open, setOpen] = useState(null)
 
     return (
-        <section className="faq" id="faq">
+        <section className="faq-tech" id="faq">
             <div className="container">
-                <div className="faq__header">
-                    <h2 className="section-title">
+                <div className="faq-tech__header">
+                    <span className="faq-tech-label">// KNOWLEDGE_BASE</span>
+                    <h2 className="faq-tech-title">
                         Respondemos tus <span>dudas</span>
                     </h2>
-                    <p className="section-subtitle">
+                    <p className="faq-tech-subtitle">
                         Si no encontrás lo que buscás, escribinos al WhatsApp y te respondemos al instante.
                     </p>
                 </div>
 
                 <motion.div 
-                    className="faq__list"
+                    className="faq-tech__list"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true }}
                     variants={{
                         hidden: { opacity: 0 },
                         visible: {
@@ -62,17 +63,20 @@ export default function FAQ() {
                     {faqs.map((faq, i) => (
                         <motion.div
                             key={i}
-                            className={`faq__item ${open === i ? 'faq__item--open' : ''}`}
+                            className={`tech-faq-item ${open === i ? 'tech-faq-item--open' : ''}`}
                             onClick={() => setOpen(open === i ? null : i)}
                             variants={{
                                 hidden: { opacity: 0, y: 15 },
                                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
                             }}
                         >
-                            <div className="faq__question">
-                                <span>{faq.q}</span>
+                            <div className="tech-faq-question">
+                                <div className="tech-faq-q-text">
+                                    <span className="tech-faq-id">{`>_Q0${i+1}`}</span>
+                                    <span>{faq.q}</span>
+                                </div>
                                 <motion.div 
-                                    className="faq__toggle"
+                                    className="tech-faq-toggle"
                                     animate={{ rotate: open === i ? 180 : 0 }}
                                     transition={{ duration: 0.3 }}
                                 >
@@ -82,7 +86,7 @@ export default function FAQ() {
                             <AnimatePresence>
                                 {open === i && (
                                     <motion.div 
-                                        className="faq__answer"
+                                        className="tech-faq-answer"
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
