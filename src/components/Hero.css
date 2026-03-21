@@ -4,7 +4,8 @@
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-  background-color: #E0E5EC; /* Soft Corporate Steel */
+  background-color: #E0E5EC;
+  /* Soft Corporate Steel */
   display: flex;
 }
 

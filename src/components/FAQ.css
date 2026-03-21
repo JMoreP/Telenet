@@ -1,7 +1,8 @@
 /* ─── FAQ (Dark Cyber-Node) ─── */
 .faq-tech {
   padding: 6rem 0;
-  background-color: #E0E5EC; /* Soft Corporate Steel */
+  background-color: #E0E5EC;
+  /* Soft Corporate Steel */
   position: relative;
   overflow: hidden;
 }
@@ -12,8 +13,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(58, 180, 230, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(58, 180, 230, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 50, 100, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 50, 100, 0.08) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: 0;
