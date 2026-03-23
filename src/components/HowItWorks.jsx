@@ -17,9 +17,9 @@ export default function HowItWorks() {
 
     return (
         <section className="app-promo" id="app-web">
-            
 
-            <div className="app-promo__inner">
+
+            <div className="app-promo__inner container">
                 {/* Lado Izquierdo: Contenido */}
                 <motion.div
                     className="tech-how-content"
@@ -33,21 +33,21 @@ export default function HowItWorks() {
                             "Conectando tu mundo a las<br /><span>telecomunicaciones</span>"
                         </h2>
                     </div>
-                    
+
                     <div className="tech-how-center">
                         <p className="tech-how-desc">
                             Somos un equipo enfocado en brindar la mejor experiencia en <strong>servicios de telecomunicaciones</strong> para nuestros clientes.
                             Comprometidos en el desarrollo de innovación tecnológico no solo de la región sino también a nivel nacional, a través de suministro de servicios de conectividad e internet alta velocidad y soluciones tecnológica en software y Hardware.
                         </p>
                         <a href="https://wa.me/1234567890"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                         className="tech-how-cta">
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="tech-how-cta">
                             Accede ahora
                         </a>
                     </div>
-                    
-                   
+
+
                 </motion.div>
             </div>
         </section>
