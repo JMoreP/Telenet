@@ -1,25 +1,83 @@
-/* ─── Coverage (Tech Map Split Layout) ─── */
+/* ─── Coverage (Mirroring Plans Background) ─── */
 .coverage-tech {
-  padding: 3rem 0;
-  background: #E0E5EC;
-  /* Soft Corporate Steel */
+  padding: 6rem 0;
+  background-color: #171717; /* Same as Plans */
   position: relative;
   overflow: hidden;
 }
 
-/* Background Grids */
-.coverage-tech::before {
-  content: "";
+/* Background Glow (Mirroring Plans) */
+.plans__bg-glow {
   position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 50, 100, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 50, 100, 0.08) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: -1px -1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(58, 180, 230, 0.15) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
-  /* behind everything, but grid */
+}
+
+/* Background Grid (Mirroring Plans) */
+.plans__bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Subtle dot grid (Mirroring Plans) */
+.coverage-tech::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(58, 180, 230, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ─── Stars Layer (Mirroring Plans) ─── */
+.stars-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.stars-layer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 15% 10%, #fff 0.5px, transparent 2px),
+    radial-gradient(circle at 40% 30%, #fff 0.5px, transparent 2px),
+    radial-gradient(circle at 60% 15%, #fff 0.5px, transparent 2px),
+    radial-gradient(circle at 85% 40%, #fff 1.5px, transparent 2.5px),
+    radial-gradient(circle at 25% 60%, #fff 1.5px, transparent 2.5px),
+    radial-gradient(circle at 70% 80%, #fff 0.5px, transparent 2px),
+    radial-gradient(circle at 10% 90%, #fff 0.5px, transparent 2px),
+    radial-gradient(circle at 90% 85%, #fff 1.5px, transparent 2.5px);
+  background-size: 350px 350px;
+  animation: glowing-stars 3s linear alternate infinite;
+}
+
+@keyframes glowing-stars {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.1; }
 }
 
 .coverage-tech__container {
@@ -59,12 +117,15 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #0D1117;
+  color: #fff; /* High contrast for dark BG */
   letter-spacing: -0.02em;
 }
 
 .tech-section-title span {
-  color: var(--orange-primary);
+  background: linear-gradient(135deg, var(--orange-primary) 0%, #FF7F50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 
@@ -115,7 +176,7 @@
   display: block;
   font-family: monospace;
   font-size: 0.75rem;
-  color: rgba(13, 17, 23, 0.5);
+  color: rgba(255, 255, 255, 0.5); /* Improved contrast on dark BG */
   letter-spacing: 0.15em;
   margin-bottom: 0.8rem;
 }

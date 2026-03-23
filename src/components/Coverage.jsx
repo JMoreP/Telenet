@@ -4,6 +4,13 @@ import './Coverage.css';
 export default function Coverage() {
     return (
         <section className="coverage-tech" id="cobertura">
+            <div className="plans__bg-glow" />
+            <div className="plans__bg-grid" />
+
+            <div className="stars-layer">
+                <div className="shooting-star-2"></div>
+            </div>
+
             <div className="coverage-tech__container">
 
                 {/* Left Side: Information */}
