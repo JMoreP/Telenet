@@ -1,16 +1,14 @@
-
-  
 /* ─── HowItWorks (Premium Dark Tech) ─── */
 .app-promo {
   display: flex;
   padding: 6rem 0;
   background-image: url('../fondo.jpg');
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../fondo.jpg');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../fondo.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   padding-top: 0;
-  height:100vh;
+  height: 100vh;
 }
 
 .app-promo__inner {
@@ -19,7 +17,7 @@
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  
+
 }
 
 .tech-how-content {
@@ -35,8 +33,10 @@
 
 .tech-how-left,
 .tech-how-center {
-  flex: 1 1 0; /* Ambos ocupan el mismo espacio */
-  min-width: 0; /* Evita que el contenido rompa el layout */
+  flex: 1 1 0;
+  /* Ambos ocupan el mismo espacio */
+  min-width: 0;
+  /* Evita que el contenido rompa el layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,11 +47,14 @@
 
 .tech-how-center {
   gap: 0.5rem;
-  margin-top: 30vh; /* Mover hacia abajo - 25% del viewport height */
+  margin-top: 30vh;
+  /* Mover hacia abajo - 25% del viewport height */
 }
+
 .tech-how-left {
   margin-right: 20vh;
-  margin-top: 25VH; /* Mover hacia abajo - 10% del viewport height */
+  margin-top: 25VH;
+  /* Mover hacia abajo - 10% del viewport height */
 }
 
 /* ─── Typography Styling ─── */
@@ -69,7 +72,7 @@
 
 .tech-how-title span {
   color: var(--orange-primary);
-  text-shadow: 
+  text-shadow:
     0 4px 8px rgba(0, 0, 0, 0.7),
     0 0 20px rgba(240, 81, 35, 0.4);
   display: inline-block;
@@ -102,7 +105,7 @@
 .tech-how-desc strong {
   color: var(--orange-primary);
   font-weight: 700;
-  text-shadow: 
+  text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.6),
     0 0 10px rgba(240, 81, 35, 0.3);
 }
@@ -174,15 +177,15 @@
     gap: 3rem;
     padding: 0 1.5rem;
   }
-  
+
   .tech-how-left {
     margin-right: 10vh;
   }
-  
+
   .tech-how-title {
     font-size: 2.8rem;
   }
-  
+
   .tech-how-desc {
     font-size: 1rem;
     max-width: 500px;
@@ -196,13 +199,13 @@
     min-height: 100vh;
     padding: 4rem 0;
   }
-  
+
   .tech-how-content {
     flex-direction: column;
     gap: 2rem;
     text-align: center;
   }
-  
+
   .tech-how-left,
   .tech-how-center {
     align-items: center;
@@ -210,23 +213,23 @@
     margin-right: 0;
     margin-top: 0;
   }
-  
+
   .tech-how-center {
     margin-top: 2rem;
     gap: 1.5rem;
   }
-  
+
   .tech-how-title {
     font-size: 2.5rem;
     text-align: center;
   }
-  
+
   .tech-how-desc {
     font-size: 1rem;
     max-width: 100%;
     text-align: center;
   }
-  
+
   .tech-how-cta {
     padding: 0.9rem 2rem;
     font-size: 0.9rem;
@@ -238,34 +241,34 @@
   .app-promo {
     padding: 3rem 0;
   }
-  
+
   .tech-how-content {
     padding: 0 1rem;
     gap: 1.5rem;
   }
-  
+
   .tech-how-title {
     font-size: 2rem;
     line-height: 1.2;
   }
-  
+
   .tech-how-title span::after {
     height: 2px;
     bottom: -3px;
   }
-  
+
   .tech-how-desc {
     font-size: 0.95rem;
     line-height: 1.6;
   }
-  
+
   .tech-how-cta {
     padding: 0.8rem 1.8rem;
     font-size: 0.85rem;
     width: 100%;
     max-width: 280px;
   }
-  
+
   .tech-how-center {
     gap: 1rem;
   }
@@ -276,15 +279,13 @@
   .tech-how-title {
     font-size: 1.8rem;
   }
-  
+
   .tech-how-desc {
     font-size: 0.9rem;
   }
-  
+
   .tech-how-cta {
     font-size: 0.8rem;
     padding: 0.7rem 1.5rem;
   }
 }
-
-
