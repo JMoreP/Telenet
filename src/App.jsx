@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 
 import Plans from './components/Plans'
-import HowItWorks from './components/HowItWorks'
+
 import Coverage from './components/Coverage'
 
 import FAQ from './components/FAQ'
@@ -17,17 +17,14 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        
 
-        <HowItWorks />
-        
         <Plans />
-        
+
         <Coverage />
-        
+
 
         <FAQ />
-       
+
       </main>
       <Footer />
       <WhatsAppButton />

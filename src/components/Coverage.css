@@ -1,7 +1,8 @@
 /* ─── Coverage (Mirroring Plans Background) ─── */
 .coverage-tech {
   padding: 6rem 0;
-  background-color: #171717; /* Same as Plans */
+  background-color: #171717;
+  /* Same as Plans */
   position: relative;
   overflow: hidden;
 }
@@ -23,7 +24,7 @@
 .plans__bg-grid {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -75,9 +76,17 @@
 }
 
 @keyframes glowing-stars {
-  0% { opacity: 0.1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 0.1; }
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
 }
 
 .coverage-tech__container {
@@ -117,7 +126,8 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #fff; /* High contrast for dark BG */
+  color: #fff;
+  /* High contrast for dark BG */
   letter-spacing: -0.02em;
 }
 
@@ -152,9 +162,7 @@
   transition: border-color 0.3s;
 }
 
-.tech-info-card:hover {
-  border-color: var(--orange-primary);
-}
+
 
 .tech-card-glow {
   position: absolute;
@@ -168,15 +176,14 @@
   pointer-events: none;
 }
 
-.tech-info-card:hover .tech-card-glow {
-  opacity: 1;
-}
+
 
 .tech-card-label {
   display: block;
   font-family: monospace;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5); /* Improved contrast on dark BG */
+  color: rgba(255, 255, 255, 0.5);
+  /* Improved contrast on dark BG */
   letter-spacing: 0.15em;
   margin-bottom: 0.8rem;
 }

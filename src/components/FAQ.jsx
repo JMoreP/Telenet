@@ -45,7 +45,7 @@ export default function FAQ() {
                     </p>
                 </div>
 
-                <motion.div 
+                <motion.div
                     className="faq-tech__list"
                     initial="hidden"
                     whileInView="visible"
@@ -63,7 +63,7 @@ export default function FAQ() {
                     {faqs.map((faq, i) => (
                         <motion.div
                             key={i}
-                            className={`tech-faq-item ${open === i ? 'tech-faq-item--open' : ''}`}
+                            className={`tech-faq-item`}
                             onClick={() => setOpen(open === i ? null : i)}
                             variants={{
                                 hidden: { opacity: 0, y: 15 },
@@ -72,10 +72,10 @@ export default function FAQ() {
                         >
                             <div className="tech-faq-question">
                                 <div className="tech-faq-q-text">
-                                    <span className="tech-faq-id">{`>_Q0${i+1}`}</span>
+
                                     <span>{faq.q}</span>
                                 </div>
-                                <motion.div 
+                                <motion.div
                                     className="tech-faq-toggle"
                                     animate={{ rotate: open === i ? 180 : 0 }}
                                     transition={{ duration: 0.3 }}
@@ -85,7 +85,7 @@ export default function FAQ() {
                             </div>
                             <AnimatePresence>
                                 {open === i && (
-                                    <motion.div 
+                                    <motion.div
                                         className="tech-faq-answer"
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}

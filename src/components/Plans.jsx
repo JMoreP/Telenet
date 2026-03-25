@@ -7,7 +7,7 @@ const categories = [
     {
         id: 'radio',
         label: 'Radio Enlace',
-        icon: '📡',
+
         description: 'Internet inalámbrico por radioenlace, ideal para zonas sin cobertura de fibra.',
         plans: [
             {
@@ -36,7 +36,7 @@ const categories = [
     {
         id: 'fibra',
         label: 'Fibra Óptica',
-        icon: '⚡',
+
         description: 'Conexión de alta velocidad por fibra óptica, la más estable y rápida.',
         plans: [
             {
@@ -121,7 +121,6 @@ export default function Plans() {
                             className={`plans__tab ${activeTab === cat.id ? 'plans__tab--active' : ''}`}
                             onClick={() => setActiveTab(cat.id)}
                         >
-                            <span className="plans__tab-icon">{cat.icon}</span>
                             <span className="plans__tab-label">{cat.label}</span>
                         </button>
                     ))}
